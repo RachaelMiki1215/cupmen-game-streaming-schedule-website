@@ -1,0 +1,34 @@
+.container {
+    position: fixed;
+    z-index: -1;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgb(255, 223, 148);
+    background-attachment: fixed;
+}
+
+.beige {
+    position: absolute;
+    top: 150px;
+    width: 100%;
+    bottom: 0;
+    background: rgb(233, 164, 86);
+}
+.beige::before {
+    content: '';
+    display: block;
+    position: absolute;
+    border-radius: 100% 50%;
+    width: 55%;
+    height: 20%;
+}
+.beige::after {
+    content: '';
+    display: block;
+    position: absolute;
+    border-radius: 100% 50%;
+    width: 55%;
+    height: 20%;
+}
