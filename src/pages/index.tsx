@@ -5,6 +5,7 @@ import * as Style from "./global.module.css";
 import StreamingSchedule from "../data/StreamingSchedule";
 import { StreamingScheduleType } from "../types/types";
 import Background from "../components/Background/Background";
+import SocialsBar from "../components/SocialsBar/SocialsBar";
 
 //#region styles
 const pageStyles = {
@@ -95,9 +96,15 @@ const IndexPage: React.FC<PageProps> = () => {
     <>
       <Background />
       <main className={Style.main}>
-        <h1>カップ麺</h1>
-        <h2>ゲーム配信スケジュール</h2>
-        <MyCalendar contents={contentArr} />
+        <header className={Style.header}>
+          <h1 className={Style.title}>カップ麺</h1>
+          <SocialsBar />
+          <hr className={Style.separator} />
+        </header>
+        <section className={Style.section}>
+          <h2 className={Style.h2}>🎮ゲーム配信スケジュール🎮</h2>
+          <MyCalendar contents={contentArr} />
+        </section>
       </main>
     </>
   );

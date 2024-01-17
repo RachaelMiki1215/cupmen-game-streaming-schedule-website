@@ -1,7 +1,7 @@
 import React, { useReducer, useState } from "react";
 import * as Style from "./Calendar.module.css";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faCaretLeft, faCaretRight } from "@fortawesome/free-solid-svg-icons";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 //#region types
 type CalendarProps = {
