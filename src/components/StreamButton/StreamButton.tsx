@@ -8,34 +8,53 @@ const StreamButton: React.FC<{ item: StreamingScheduleType }> = ({ item }) => {
     x: 0,
     y: 0,
   });
+  const [windowSize, setWindowSize] = useState<{
+    width: number;
+    height: number;
+  }>({ width: window.innerWidth, height: window.innerHeight });
 
-  const itemRef = useRef<HTMLDivElement>(null);
+  const cardRef = useRef<HTMLDivElement>(null);
+  const detailRef = useRef<HTMLDListElement>(null);
 
   useEffect(() => {
-    function checkClickLocation(e) {
-      if (itemRef.current && !itemRef.current.contains(e.target)) {
+    setMouseCoords({
+      x: cardRef.current?.getBoundingClientRect().x as number,
+      y: cardRef.current?.getBoundingClientRect().y as number,
+    });
+  }, []);
+
+  useEffect(() => {
+    function checkClickLocation(e: any) {
+      if (cardRef.current && cardRef.current.contains(e.target)) {
+        setIsClicked(true);
+        if (!(detailRef.current && detailRef.current.contains(e.target))) {
+          setMouseCoords({
+            x: e.clientX,
+            y: e.clientY,
+          });
+        }
+      } else {
         setIsClicked(false);
       }
     }
 
+    function handleWindowResize() {
+      setWindowSize({ width: window.innerWidth, height: window.innerHeight });
+      console.log("window size changed!");
+    }
+
     window.addEventListener("mousedown", checkClickLocation);
+    window.addEventListener("load", handleWindowResize);
+    window.addEventListener("resize", handleWindowResize);
     return () => {
       window.removeEventListener("mousedown", checkClickLocation);
+      window.removeEventListener("load", handleWindowResize);
+      window.removeEventListener("resize", handleWindowResize);
     };
-  }, [itemRef]);
+  }, [cardRef, detailRef]);
 
   return (
-    <div
-      ref={itemRef}
-      className={Style.streamButton}
-      onClick={(e) => {
-        setIsClicked(true);
-        setMouseCoords({
-          x: e.clientX,
-          y: e.clientY,
-        });
-      }}
-    >
+    <div ref={cardRef} className={Style.streamButton}>
       <div>{`${item.datetime
         .getHours()
         .toString()
@@ -45,14 +64,22 @@ const StreamButton: React.FC<{ item: StreamingScheduleType }> = ({ item }) => {
         .padStart(2, "0")}~`}</div>
       <div>{item.title}</div>
       <dl
+        ref={detailRef}
         className={Style.streamDetails}
         style={{
-          top: coords.y,
-          left: coords.x,
+          top:
+            coords.y + 200 > windowSize.height
+              ? windowSize.height - 200
+              : coords.y,
+          left:
+            coords.x + 405 > windowSize.width
+              ? windowSize.width - 405
+              : coords.x,
           opacity: isClicked ? 1 : 0,
+          transform: isClicked ? "scale(1)" : "scale(0)",
         }}
       >
-        <dt>Time</dt>
+        <dt>開始時間</dt>
         <dd>{`${item.datetime
           .getHours()
           .toString()
@@ -60,12 +87,51 @@ const StreamButton: React.FC<{ item: StreamingScheduleType }> = ({ item }) => {
           .getMinutes()
           .toString()
           .padStart(2, "0")}~`}</dd>
-        <dt>Title</dt>
+        <dt>題名</dt>
         <dd>{item.title}</dd>
-        <dt>Game</dt>
+        <dt>ゲーム</dt>
         <dd>{item.game}</dd>
-        {/* <dt>Platforms</dt>
-        <dd></dd> */}
+        <dt>配信場所</dt>
+        <dd>
+          <ul className={Style.platformList}>
+            {item.platform.map((p) => {
+              return (
+                <li key={`platform_${p.name}_${Math.random()}`}>
+                  {p.icon && (
+                    <a
+                      href={p.url}
+                      target="_blank"
+                      className={Style.socialsLink}
+                    >
+                      {p.icon}
+                    </a>
+                  )}
+                </li>
+              );
+            })}
+          </ul>
+        </dd>
+        {item.streamingWith && (
+          <>
+            <dt>コラボ</dt>
+            <dd>
+              <ul className={Style.streamWithList}>
+                {item.streamingWith.map((u) => {
+                  return (
+                    <li>
+                      <a
+                        href={u.socials ? u.socials.at(0)?.url : ""}
+                        target="_blank"
+                      >
+                        {u.name}
+                      </a>
+                    </li>
+                  );
+                })}
+              </ul>
+            </dd>
+          </>
+        )}
       </dl>
     </div>
   );

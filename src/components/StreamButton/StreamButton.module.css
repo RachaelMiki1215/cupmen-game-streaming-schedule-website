@@ -7,7 +7,8 @@
     border-radius: 5px;
     position: relative;
     cursor: pointer;
-    user-select: none;
+    max-height: 200px;
+    overflow: hidden;
 }
 
 .streamDetails {
@@ -19,15 +20,42 @@
     padding: 10px 20px;
     box-sizing: border-box;
     position: fixed;
-    z-index: 100;
-    transition: opacity 0.5s ease;
+    z-index: 999;
+    transition: all 0.5s ease;
     display: grid;
     grid-template-columns: 1fr 4fr;
     row-gap: 10px;
-}
-.streamDetails > dt {
-    font-weight: bold;
+    cursor: initial;
 }
 .streamDetails > dt::after {
     content: ":";
+}
+
+.platformList {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: row;
+    gap: 5px;
+}
+.platformList > li {
+    margin: 0;
+    padding: 0;
+}
+
+.socialsLink > svg, .socialsLink > span {
+    transition: transform 0.5s ease;
+}
+.socialsLink:hover > svg, .socialsLink:hover > span {
+    transform: scale(2.5)
+}
+
+.streamWithList {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+.platformList > li {
+    padding: 0;
 }
