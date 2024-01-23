@@ -177,13 +177,13 @@ const MyCalendar: React.FC<CalendarProps> = ({ contents }) => {
   return (
     <div className={Style.container}>
       <div className={Style.buttons}>
-        <button onClick={getPreviousMonth} className={Style.backButton}>
+        <button onClick={getPreviousMonth}>
           <FontAwesomeIcon icon={faCaretLeft} />
         </button>
         <button onClick={resetCalendar}>
           {months[calendarState.monthIndex]} {calendarState.year}
         </button>
-        <button onClick={getNextMonth} className={Style.nextButton}>
+        <button onClick={getNextMonth}>
           <FontAwesomeIcon icon={faCaretRight} />
         </button>
       </div>
@@ -192,26 +192,25 @@ const MyCalendar: React.FC<CalendarProps> = ({ contents }) => {
           <div
             className={Style.dayHeader}
             style={index === 0 || index === 6 ? { color: "gold" } : {}}
+            key={`weekday_${day}`}
           >
             {day}
           </div>
         ))}
         {calendarState.calendarDates.map((date) => (
           <div
+            key={`day_${date.toString()}`}
             className={`${Style.dateCell} ${
               date.getFullYear() === currentDate.getFullYear() &&
               date.getMonth() === currentDate.getMonth() &&
               date.getDate() === currentDate.getDate()
                 ? Style.today
                 : ""
+            } ${
+              date.getMonth() === calendarState.monthIndex
+                ? ""
+                : Style.otherMonth
             }`}
-            style={{
-              opacity: date.getMonth() === calendarState.monthIndex ? 1 : 0.8,
-              fontWeight:
-                date.getMonth() === calendarState.monthIndex
-                  ? "bold"
-                  : "normal",
-            }}
           >
             <span>
               {date.getMonth() != calendarState.monthIndex &&
@@ -227,7 +226,7 @@ const MyCalendar: React.FC<CalendarProps> = ({ contents }) => {
                     content.dateTime.getDate() === date.getDate()
                   );
                 })
-                .map((item) => <>{item.item}</>)}
+                .map((item) => <span key={Math.random()}>{item.item}</span>)}
           </div>
         ))}
       </div>
