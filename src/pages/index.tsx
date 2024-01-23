@@ -19,7 +19,10 @@ const IndexPage: React.FC<PageProps> = () => {
       <main>
         <h1>カップ麺</h1>
         <section className={Style.section}>
-          <h2>🎮ゲーム配信スケジュール🎮</h2>
+          <h2>
+            <span>🎮ゲーム配信</span>
+            <span>スケジュール🎮</span>
+          </h2>
           <MyCalendar contents={contentArr} />
         </section>
       </main>
