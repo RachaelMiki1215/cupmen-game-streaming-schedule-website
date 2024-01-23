@@ -191,26 +191,26 @@ const MyCalendar: React.FC<CalendarProps> = ({ contents }) => {
         {weekdays.map((day, index) => (
           <div
             className={Style.dayHeader}
-            style={index === 0 || index === 6 ? { color: "red" } : {}}
+            style={index === 0 || index === 6 ? { color: "gold" } : {}}
           >
             {day}
           </div>
         ))}
         {calendarState.calendarDates.map((date) => (
           <div
-            className={Style.dateCell}
+            className={`${Style.dateCell} ${
+              date.getFullYear() === currentDate.getFullYear() &&
+              date.getMonth() === currentDate.getMonth() &&
+              date.getDate() === currentDate.getDate()
+                ? Style.today
+                : ""
+            }`}
             style={{
               opacity: date.getMonth() === calendarState.monthIndex ? 1 : 0.8,
               fontWeight:
                 date.getMonth() === calendarState.monthIndex
                   ? "bold"
                   : "normal",
-              background:
-                date.getFullYear() === currentDate.getFullYear() &&
-                date.getMonth() === currentDate.getMonth() &&
-                date.getDate() === currentDate.getDate()
-                  ? "rgba(252, 132, 3, 0.8)"
-                  : "rgba(255, 255, 255, 0.8)",
             }}
           >
             <span>
