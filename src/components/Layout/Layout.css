@@ -3,6 +3,9 @@
 @import url("../../static/fonts/fonts.css");
 
 body {
+    margin: 0;
+    padding: 0;
+    width: 100%;
     background: var(--bg-color);
     background-image: url("../../images/raimon-illust_png.png");
     background-size: 100px;
@@ -14,6 +17,9 @@ body {
     display: flex;
     flex-direction: column;
     align-items: center;
+}
+body > div {
+    width: 100%;
 }
 
 h1, h2, h3, h4, h5, h6 {
@@ -31,6 +37,10 @@ h1 {
 }
 h2 {
     font-size: 1.8rem;
+}
+
+span {
+    display: inline-block;
 }
 
 section {
