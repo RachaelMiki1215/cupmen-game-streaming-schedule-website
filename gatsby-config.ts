@@ -22,7 +22,7 @@ const config: GatsbyConfig = {
     {
       resolve: "gatsby-plugin-manifest",
       options: {
-        icon: "src/images/icon.png",
+        icon: "src/images/icon2.png",
       },
     },
     "gatsby-plugin-sharp",
@@ -42,6 +42,15 @@ const config: GatsbyConfig = {
         path: "./src/pages/",
       },
       __key: "pages",
+    },
+    {
+      resolve: "gatsby-plugin-web-font-loader",
+      options: {
+        custom: {
+          families: ["MihiPixelMoji"],
+          urls: ["/fonts/fonts.css"],
+        },
+      },
     },
   ],
 };
