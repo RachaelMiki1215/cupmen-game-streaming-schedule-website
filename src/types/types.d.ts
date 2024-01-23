@@ -1,12 +1,16 @@
+import { IconDefinition } from "@fortawesome/free-solid-svg-icons";
+import React from "react";
+
 type SocialAccount = {
   name: string;
   username: string;
   url: string;
+  icon?: React.ReactNode;
 };
 
 type User = {
   name: string;
-  socials?: SocialAccount | SocialAccount[];
+  socials?: SocialAccount[];
 };
 
 type StreamingScheduleType = {
@@ -14,8 +18,8 @@ type StreamingScheduleType = {
   game: string;
   title: string;
   description: string;
-  platform: SocialAccount | SocialAccount[];
-  streamingWith?: User | User[];
+  platform: SocialAccount[];
+  streamingWith?: User[];
 };
 
 export { User, StreamingScheduleType, SocialAccount };
