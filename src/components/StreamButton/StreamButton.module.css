@@ -1,0 +1,33 @@
+@import url("../../styles/variable.css");
+
+.streamButton {
+    background: var(--panel-color-2);
+    font-size: 1rem;
+    padding: 2px 5px;
+    border-radius: 5px;
+    position: relative;
+    cursor: pointer;
+    user-select: none;
+}
+
+.streamDetails {
+    background: var(--panel-color);
+    border-radius: 20px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.4);
+    width: 400px;
+    height: auto;
+    padding: 10px 20px;
+    box-sizing: border-box;
+    position: fixed;
+    z-index: 100;
+    transition: opacity 0.5s ease;
+    display: grid;
+    grid-template-columns: 1fr 4fr;
+    row-gap: 10px;
+}
+.streamDetails > dt {
+    font-weight: bold;
+}
+.streamDetails > dt::after {
+    content: ":";
+}
