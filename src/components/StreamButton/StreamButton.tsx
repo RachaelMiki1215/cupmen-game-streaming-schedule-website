@@ -39,8 +39,9 @@ const StreamButton: React.FC<{ item: StreamingScheduleType }> = ({ item }) => {
     }
 
     function handleWindowResize() {
-      setWindowSize({ width: window.innerWidth, height: window.innerHeight });
-      console.log("window size changed!");
+      if (typeof window != "undefined") {
+        setWindowSize({ width: window.innerWidth, height: window.innerHeight });
+      }
     }
 
     window.addEventListener("mousedown", checkClickLocation);
