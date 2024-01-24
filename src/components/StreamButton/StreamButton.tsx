@@ -11,7 +11,7 @@ const StreamButton: React.FC<{ item: StreamingScheduleType }> = ({ item }) => {
   const [windowSize, setWindowSize] = useState<{
     width: number;
     height: number;
-  }>({ width: window.innerWidth, height: window.innerHeight });
+  }>({ width: 0, height: 0 });
 
   const cardRef = useRef<HTMLDivElement>(null);
   const detailRef = useRef<HTMLDListElement>(null);
@@ -20,6 +20,11 @@ const StreamButton: React.FC<{ item: StreamingScheduleType }> = ({ item }) => {
     setMouseCoords({
       x: cardRef.current?.getBoundingClientRect().x as number,
       y: cardRef.current?.getBoundingClientRect().y as number,
+    });
+
+    setWindowSize({
+      width: window.innerWidth,
+      height: window.innerHeight,
     });
   }, []);
 
@@ -39,9 +44,7 @@ const StreamButton: React.FC<{ item: StreamingScheduleType }> = ({ item }) => {
     }
 
     function handleWindowResize() {
-      if (typeof window != "undefined") {
-        setWindowSize({ width: window.innerWidth, height: window.innerHeight });
-      }
+      setWindowSize({ width: window.innerWidth, height: window.innerHeight });
     }
 
     window.addEventListener("mousedown", checkClickLocation);
