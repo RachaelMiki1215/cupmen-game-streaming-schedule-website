@@ -1,8 +1,6 @@
 @import url('../styles/variable.css');
+@import url("../static/fonts/fonts.css");
 
-.section {
-    margin: 1.2rem 0 1.2rem 0;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+.mihiFont {
+    font-family: 'MihiPixelMoji', monospace;
 }

@@ -12,8 +12,10 @@ body {
     background-position: 10px 20px;
     background-attachment: fixed;
     color: var(--text-color);
-    padding-bottom: 60px;
+    padding-bottom: 80px;
     font-family: 'Yomogi', monospace;
+    font-size: 1.4rem;
+    font-weight: bold;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -39,10 +41,44 @@ h2 {
     font-size: 1.8rem;
 }
 
+p {
+    text-align: center;
+    font-size: 1.4rem;
+    font-weight: bolder;
+    color: var(--text-color);
+}
+p::first-letter {
+    font-size: 2rem;
+}
+
+strong {
+    background: var(--highlight-color);
+    color: var(--bg-color);
+    padding: 2px 4px;
+    margin: 0px 5px 0px 5px;
+    border-radius: 10px;
+}
+
 span {
     display: inline-block;
 }
 
 section {
     width: 100%;
+    margin-top: 100px;
+    margin-bottom: 50px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+section:first-of-type {
+    margin-top: 50px;
+}
+
+ul {
+    list-style-type: "🍥";
+}
+ul > li {
+    padding-left: 10px;
+    padding-bottom: 5px;
 }
