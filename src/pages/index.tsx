@@ -26,16 +26,25 @@ const IndexPage: React.FC<PageProps> = () => {
           <MyCalendar contents={contentArr} />
         </section>
         <section>
-          <h2>💬このウェブサイトについて💬</h2>
+          <h2>
+            <span>💬この</span>
+            <span>ウェブサイトに</span>
+            <span>ついて💬</span>
+          </h2>
           <p>
-            このウェブサイトは主に<strong>カップ麺（配信者）</strong>
-            の配信スケジュールを共有するためのものです。
+            <span>
+              このウェブサイトは主に<strong>カップ麺（配信者）</strong>の
+            </span>
+            <span>配信スケジュールを共有するためのものです。</span>
             <br />
-            本件についてのご質問・ご要望等はX（
-            <a href="https://twitter.com/TonkotsuCupMen" target="_blank">
-              @TonkotsuCupMen
-            </a>
-            ）にて受け付けております。
+            <span>本件についてのご質問・ご要望等は</span>
+            <span>
+              X（
+              <a href="https://twitter.com/TonkotsuCupMen" target="_blank">
+                @TonkotsuCupMen
+              </a>
+              ）にて受け付けております。
+            </span>
           </p>
         </section>
         <section>
