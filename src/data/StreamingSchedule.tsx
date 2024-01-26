@@ -132,6 +132,13 @@ const StreamingSchedule: StreamingScheduleType[] = [
     description: "",
     platform: [MyYouTube, MyKick],
   },
+  {
+    datetime: new Date("2024-02-01T21:00:00.000-06:00"),
+    game: "Sims 4",
+    title: "【初回】カップ麺がSims 4で神ごっこするよ【ゲームプレイ配信】",
+    description: "",
+    platform: [MyYouTube, MyKick, MyTwitch],
+  },
 ];
 
 export default StreamingSchedule;
