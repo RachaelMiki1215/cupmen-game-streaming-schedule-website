@@ -59,18 +59,26 @@ const ResourceDiv: React.FC = () => {
       <h2>🍂使用素材🍂</h2>
       <ul>
         <li>
-          <a href="https://fontawesome.com/">FontAwesome</a> -
-          JavaScriptで使えるアイコンライブラリ。凄く重宝してる✨
+          <a href="https://fontawesome.com/" target="_blank">
+            FontAwesome
+          </a>{" "}
+          - JavaScriptで使えるアイコンライブラリ。凄く重宝してる✨
         </li>
         <li>
-          <a href="https://fonts.google.com/">Google Fonts</a> -
-          <strong>このフォント</strong>（
-          <a href="https://fonts.google.com/specimen/Yomogi">Yomogi</a>
+          <a href="https://fonts.google.com/" target="_blank">
+            Google Fonts
+          </a>{" "}
+          -<strong>このフォント</strong>（
+          <a href="https://fonts.google.com/specimen/Yomogi" target="_blank">
+            Yomogi
+          </a>
           ）をウェブで使用するために配布してくれてるところ。使いやすい🔧
         </li>
         <li>
-          <a href="https://mihifont.netlify.app/">みひらめフォント</a> -{" "}
-          <strong className={Style.mihiFont}>このフォント</strong>
+          <a href="https://mihifont.netlify.app/" target="_blank">
+            みひらめフォント
+          </a>{" "}
+          - <strong className={Style.mihiFont}>このフォント</strong>
           を配布してくれてるところ。ありがたい🙏
         </li>
       </ul>
