@@ -9,6 +9,11 @@
     cursor: pointer;
     max-height: 200px;
     overflow: hidden;
+    box-shadow: none;
+    transition: box-shadow 0.5s ease;
+}
+.streamButton:hover {
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.4);
 }
 
 .streamDetails {
