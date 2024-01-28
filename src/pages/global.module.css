@@ -4,3 +4,11 @@
 .mihiFont {
     font-family: 'MihiPixelMoji', monospace;
 }
+
+.section {
+    overflow-x: hidden;
+}
+.section > div {
+    transform: translateX(100%);
+    transition: all 0.5s ease;
+}
