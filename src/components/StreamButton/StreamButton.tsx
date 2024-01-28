@@ -1,6 +1,7 @@
 import React, { useEffect, useRef, useState } from "react";
 import { StreamingScheduleType } from "../../types/types";
 import * as Style from "./StreamButton.module.css";
+import { useWindowSize } from "../../hooks/WindowHooks";
 
 const StreamButton: React.FC<{ item: StreamingScheduleType }> = ({ item }) => {
   const [isClicked, setIsClicked] = useState<boolean>(false);
@@ -8,10 +9,7 @@ const StreamButton: React.FC<{ item: StreamingScheduleType }> = ({ item }) => {
     x: 0,
     y: 0,
   });
-  const [windowSize, setWindowSize] = useState<{
-    width: number;
-    height: number;
-  }>({ width: 0, height: 0 });
+  const windowSize = useWindowSize();
 
   const cardRef = useRef<HTMLDivElement>(null);
   const detailRef = useRef<HTMLDListElement>(null);
@@ -21,15 +19,10 @@ const StreamButton: React.FC<{ item: StreamingScheduleType }> = ({ item }) => {
       x: cardRef.current?.getBoundingClientRect().x as number,
       y: cardRef.current?.getBoundingClientRect().y as number,
     });
-
-    setWindowSize({
-      width: window.innerWidth,
-      height: window.innerHeight,
-    });
   }, []);
 
   useEffect(() => {
-    function checkClickLocation(e: any) {
+    const checkClickLocation = (e: any) => {
       if (cardRef.current && cardRef.current.contains(e.target)) {
         setIsClicked(true);
         if (!(detailRef.current && detailRef.current.contains(e.target))) {
@@ -41,19 +34,11 @@ const StreamButton: React.FC<{ item: StreamingScheduleType }> = ({ item }) => {
       } else {
         setIsClicked(false);
       }
-    }
-
-    function handleWindowResize() {
-      setWindowSize({ width: window.innerWidth, height: window.innerHeight });
-    }
+    };
 
     window.addEventListener("mousedown", checkClickLocation);
-    window.addEventListener("load", handleWindowResize);
-    window.addEventListener("resize", handleWindowResize);
     return () => {
       window.removeEventListener("mousedown", checkClickLocation);
-      window.removeEventListener("load", handleWindowResize);
-      window.removeEventListener("resize", handleWindowResize);
     };
   }, [cardRef, detailRef]);
 
