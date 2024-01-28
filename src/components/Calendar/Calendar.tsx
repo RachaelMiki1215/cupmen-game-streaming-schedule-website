@@ -207,11 +207,14 @@ const MyCalendar: React.FC<CalendarProps> = ({ contents }) => {
                 ? Style.today
                 : ""
             } ${
+              date.getDay() === 0 || date.getDay() === 6 ? Style.weekend : ""
+            } ${
               date.getMonth() === calendarState.monthIndex
                 ? ""
                 : Style.otherMonth
             }`}
           >
+            <div className={Style.backdropLayer}></div>
             <span>
               {date.getMonth() != calendarState.monthIndex &&
                 `${date.getMonth() + 1}/`}
@@ -226,7 +229,7 @@ const MyCalendar: React.FC<CalendarProps> = ({ contents }) => {
                     content.dateTime.getDate() === date.getDate()
                   );
                 })
-                .map((item) => <span key={Math.random()}>{item.item}</span>)}
+                .map((item) => <div key={Math.random()}>{item.item}</div>)}
           </div>
         ))}
       </div>
