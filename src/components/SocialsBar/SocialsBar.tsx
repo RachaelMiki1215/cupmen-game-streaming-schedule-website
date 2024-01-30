@@ -6,6 +6,7 @@ import {
   faDiscord,
   faXTwitter,
 } from "@fortawesome/free-brands-svg-icons";
+import { RiKickFill } from "@remixicon/react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 const socialsList = [
@@ -19,11 +20,11 @@ const socialsList = [
     link: "https://www.twitch.tv/mikinoodles",
     icon: <FontAwesomeIcon icon={faTwitch} />,
   },
-  // {
-  //   name: "Kick",
-  //   link: "https://kick.com/mikinoodles",
-  //   icon:
-  // },
+  {
+    name: "Kick",
+    link: "https://kick.com/mikinoodles",
+    icon: <RiKickFill />,
+  },
   {
     name: "Discord",
     link: "https://discord.com/users/1074163211957452870",
