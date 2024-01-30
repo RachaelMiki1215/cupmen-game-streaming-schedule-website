@@ -53,34 +53,61 @@ const AboutDiv: React.FC = () => {
   );
 };
 
+const resourceList = [
+  {
+    link: "https://fontawesome.com/",
+    name: "FontAwesome",
+    description: <>JavaScriptで使えるアイコンライブラリ。凄く重宝してる✨</>,
+  },
+  {
+    link: "https://remixicon.com/",
+    name: "Remix Icon",
+    description: (
+      <>
+        同じくJavaScriptで使えるアイコンライブラリ。ニッチなところもカバーしてあって助かる🥰
+      </>
+    ),
+  },
+  {
+    link: "https://fonts.google.com/",
+    name: "Google Fonts",
+    description: (
+      <>
+        <strong>このフォント</strong>（
+        <a href="https://fonts.google.com/specimen/Yomogi" target="_blank">
+          Yomogi
+        </a>
+        ）をウェブで使用するために配布してくれてるところ。使いやすい👍
+      </>
+    ),
+  },
+  {
+    link: "https://mihifont.netlify.app/",
+    name: "みひらめフォント",
+    description: (
+      <>
+        <strong className={Style.mihiFont}>このフォント</strong>
+        を配布してくれてるところ。ありがたい🙏
+      </>
+    ),
+  },
+];
+
 const ResourceDiv: React.FC = () => {
   return (
     <div>
       <h2>🍂使用素材🍂</h2>
       <ul>
-        <li>
-          <a href="https://fontawesome.com/" target="_blank">
-            FontAwesome
-          </a>{" "}
-          - JavaScriptで使えるアイコンライブラリ。凄く重宝してる✨
-        </li>
-        <li>
-          <a href="https://fonts.google.com/" target="_blank">
-            Google Fonts
-          </a>{" "}
-          -<strong>このフォント</strong>（
-          <a href="https://fonts.google.com/specimen/Yomogi" target="_blank">
-            Yomogi
-          </a>
-          ）をウェブで使用するために配布してくれてるところ。使いやすい🔧
-        </li>
-        <li>
-          <a href="https://mihifont.netlify.app/" target="_blank">
-            みひらめフォント
-          </a>{" "}
-          - <strong className={Style.mihiFont}>このフォント</strong>
-          を配布してくれてるところ。ありがたい🙏
-        </li>
+        {resourceList.map((r) => {
+          return (
+            <li key={`resource_${Math.random()}`}>
+              <a href={r.link} target="_blank">
+                {r.name}
+              </a>{" "}
+              - {r.description}
+            </li>
+          );
+        })}
       </ul>
     </div>
   );
