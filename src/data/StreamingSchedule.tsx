@@ -128,7 +128,7 @@ const StreamingSchedule: StreamingScheduleType[] = [
   {
     datetime: new Date("2024-01-30T21:00:00.000-06:00"),
     game: "Minecraft（Java）",
-    title: "【第21回】カップ麺がのんびりマイクラするよ【ゲームプレイ配信】",
+    title: "【第22回】カップ麺がのんびりマイクラするよ【ゲームプレイ配信】",
     description: "",
     platform: [MyYouTube, MyKick],
   },
