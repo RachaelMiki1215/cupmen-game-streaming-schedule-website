@@ -1,7 +1,8 @@
-import React, { useReducer, useState } from "react";
+import React, { useReducer } from "react";
 import * as Style from "./Calendar.module.css";
 import { faCaretLeft, faCaretRight } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { useWindowSize } from "../../hooks/WindowHooks";
 
 //#region types
 type CalendarProps = {
@@ -154,6 +155,7 @@ const MyCalendar: React.FC<CalendarProps> = ({ contents }) => {
     calendarStateReducer,
     initialCalendarState
   );
+  const windowSize = useWindowSize();
 
   const getPreviousMonth = () => {
     dispatchCalendarState({
@@ -219,6 +221,7 @@ const MyCalendar: React.FC<CalendarProps> = ({ contents }) => {
               {date.getMonth() != calendarState.monthIndex &&
                 `${date.getMonth() + 1}/`}
               {date.getDate()}
+              {windowSize.width < 600 ? ` (${weekdays[date.getDay()]})` : ""}
             </span>
             {contents &&
               contents

@@ -64,3 +64,9 @@
 .platformList > li {
     padding: 0;
 }
+
+@media (max-width: 849px) {
+    .streamButton {
+        font-size: 0.8em;
+    }
+}
