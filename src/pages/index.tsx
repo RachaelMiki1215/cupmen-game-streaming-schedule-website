@@ -16,13 +16,13 @@ const contentArr = StreamingSchedule.map((s) => {
 
 const CalendarDiv: React.FC = () => {
   return (
-    <div>
+    <>
       <h2>
         <span>🎮ゲーム配信</span>
         <span>スケジュール🎮</span>
       </h2>
       <MyCalendar contents={contentArr} />
-    </div>
+    </>
   );
 };
 
