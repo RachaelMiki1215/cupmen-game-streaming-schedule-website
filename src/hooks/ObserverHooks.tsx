@@ -41,7 +41,7 @@ const useObserver = (
         onNotIntersect();
       } else {
         containerRef.current.childNodes.forEach((ch: any) => {
-          ch.style.transform = "translateX(100%)";
+          ch.style.transform = "translateX(200%)";
         });
       }
     }

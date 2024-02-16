@@ -1,14 +1,15 @@
-@import url('../styles/variable.css');
+@import url("../styles/variable.css");
 @import url("../static/fonts/fonts.css");
 
 .mihiFont {
-    font-family: 'MihiPixelMoji', monospace;
+  font-family: "MihiPixelMoji", monospace;
 }
 
 .section {
-    overflow-x: hidden;
+  overflow-x: hidden;
 }
 .section > div {
-    transform: translateX(100%);
-    transition: all 0.5s ease;
+  /* TODO: This right here is dictated directly by the Observer Hook. Needs to be changed eventually. */
+  /* transform: translateX(200%); */
+  transition: all 0.5s ease;
 }
