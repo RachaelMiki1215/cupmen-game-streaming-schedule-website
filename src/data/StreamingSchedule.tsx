@@ -2,6 +2,7 @@ import { faTwitch, faYoutube } from "@fortawesome/free-brands-svg-icons";
 import { User, SocialAccount, StreamingScheduleType } from "../types/types";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import React from "react";
+import { RiKickFill } from "@remixicon/react";
 
 //#region socials
 const MyYouTube: SocialAccount = {
@@ -15,21 +16,7 @@ const MyKick: SocialAccount = {
   name: "Kick",
   username: "mikinoodles",
   url: "https://kick.com/mikinoodles",
-  icon: (
-    <span
-      style={{
-        color: "black",
-        fontWeight: "bold",
-        textTransform: "uppercase",
-        background: "#53fc18",
-        padding: "2px 4px",
-        borderRadius: "5px",
-        fontFamily: "monospace",
-      }}
-    >
-      Kick
-    </span>
-  ),
+  icon: <RiKickFill style={{ color: "#53fc18" }} />,
 };
 
 const MyTwitch: SocialAccount = {
