@@ -16,13 +16,22 @@ const contentArr = StreamingSchedule.map((s) => {
 
 const CalendarDiv: React.FC = () => {
   return (
-    <>
+    <div className={Style.calendarDiv}>
       <h2>
         <span>🎮ゲーム配信</span>
         <span>スケジュール🎮</span>
       </h2>
       <MyCalendar contents={contentArr} />
-    </>
+    </div>
+  );
+};
+
+const StreamingMaterialsDiv: React.FC = () => {
+  return (
+    <div>
+      <h2>🧰配布素材🧰</h2>
+      <p>（準備中🚧）</p>
+    </div>
   );
 };
 
@@ -114,8 +123,11 @@ const ResourceDiv: React.FC = () => {
 };
 
 const IndexPage: React.FC<PageProps> = () => {
+  const calendarRef = useRef<HTMLElement>(null);
+  const streamingMaterialsSectionRef = useRef<HTMLElement>(null);
   const aboutSectionRef = useRef<HTMLElement>(null);
   const resourceSectionRef = useRef<HTMLElement>(null);
+  useObserver(streamingMaterialsSectionRef);
   useObserver(aboutSectionRef);
   useObserver(resourceSectionRef);
 
@@ -123,8 +135,11 @@ const IndexPage: React.FC<PageProps> = () => {
     <Layout>
       <main>
         <h1>カップ麺</h1>
-        <section>
+        <section className={Style.section} ref={calendarRef}>
           <CalendarDiv />
+        </section>
+        <section className={Style.section} ref={streamingMaterialsSectionRef}>
+          <StreamingMaterialsDiv />
         </section>
         <section className={Style.section} ref={aboutSectionRef}>
           <AboutDiv />
@@ -147,5 +162,9 @@ export const Head: HeadFC = () => (
       name="description"
       content="カップ麺（配信者）のゲームプレイ配信掲載用ウェブサイト"
     />
+    <script
+      src="https://kit.fontawesome.com/ed0b8ed380.js"
+      crossorigin="anonymous"
+    ></script>
   </>
 );
