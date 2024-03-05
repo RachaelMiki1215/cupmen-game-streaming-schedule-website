@@ -1,72 +1,80 @@
 @import url("../../styles/variable.css");
 
 .streamButton {
-    background: var(--panel-color-2);
-    font-size: 1rem;
-    padding: 2px 5px;
-    border-radius: 5px;
-    position: relative;
-    cursor: pointer;
-    max-height: 200px;
-    overflow: hidden;
-    box-shadow: none;
-    transition: box-shadow 0.5s ease;
+  background: var(--panel-color-2);
+  font-size: 1rem;
+  padding: 2px 5px;
+  border-radius: 5px;
+  position: relative;
+  cursor: pointer;
+  max-height: 200px;
+  overflow: hidden;
+  box-shadow: none;
+  transition: box-shadow 0.5s ease;
 }
 .streamButton:hover {
-    box-shadow: 0 0 5px rgba(0, 0, 0, 0.4);
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.4);
 }
 
 .streamDetails {
-    background: var(--panel-color);
-    border-radius: 20px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.4);
-    width: 400px;
-    height: auto;
-    padding: 10px 20px;
-    box-sizing: border-box;
-    position: fixed;
-    z-index: 999;
-    transition: all 0.5s ease;
-    display: grid;
-    grid-template-columns: 1fr 4fr;
-    row-gap: 10px;
-    cursor: initial;
+  background: var(--panel-color);
+  border-radius: 20px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.4);
+  width: 400px;
+  height: auto;
+  padding: 10px 20px;
+  box-sizing: border-box;
+  position: fixed;
+  z-index: 999;
+  transition: all 0.5s ease;
+  display: grid;
+  grid-template-columns: 1fr 4fr;
+  row-gap: 10px;
+  cursor: initial;
 }
 .streamDetails > dt::after {
-    content: ":";
+  content: ":";
 }
 
 .platformList {
-    list-style-type: none;
-    margin: 0;
-    padding: 0;
-    display: flex;
-    flex-direction: row;
-    gap: 5px;
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: row;
+  gap: 5px;
 }
 .platformList > li {
-    margin: 0;
-    padding: 0;
+  margin: 0;
+  padding: 0;
 }
 
-.socialsLink > svg, .socialsLink > span {
-    transition: transform 0.5s ease;
+.socialsLink {
+  background: unset;
 }
-.socialsLink:hover > svg, .socialsLink:hover > span {
-    transform: scale(2.5)
+.socialsLink::before {
+  content: unset;
+}
+.socialsLink > svg,
+.socialsLink > span {
+  transition: transform 0.5s ease;
+}
+.socialsLink:hover > svg,
+.socialsLink:hover > span {
+  transform: scale(2.5);
 }
 
 .streamWithList {
-    list-style-type: none;
-    margin: 0;
-    padding: 0;
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
 }
 .platformList > li {
-    padding: 0;
+  padding: 0;
 }
 
 @media (max-width: 849px) {
-    .streamButton {
-        font-size: 0.8em;
-    }
+  .streamButton {
+    font-size: 0.8em;
+  }
 }

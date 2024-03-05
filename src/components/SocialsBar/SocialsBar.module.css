@@ -1,28 +1,34 @@
 @import url("../../styles/variable.css");
 
 .container {
-    list-style-type: none;
-    margin: 0;
-    padding: 0;
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    align-items: center;
-    gap: 20px;
-    height: auto;
-    margin: 0 0 20px 0;
-    background: var(--panel-color);
-    padding: 10px 20px;
-    border-radius: 100px;
-    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.4);
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+  height: auto;
+  margin: 0 0 20px 0;
+  background: var(--panel-color);
+  padding: 10px 20px;
+  border-radius: 100px;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.4);
+}
+.container > li > a {
+  background-color: unset;
+}
+.container > li > a::before {
+  content: none;
 }
 .container > li > a > svg {
-    height: 20px;
-    color: var(--bg-color);
-    transition: transform 0.5s ease;
-    /* box-shadow: 0px 0px 0px none; */
+  height: 20px;
+  color: var(--bg-color);
+  transition: transform 0.5s ease;
+  /* box-shadow: 0px 0px 0px none; */
 }
 .container > li > a > svg:hover {
-    transform: scale(1.5);
-    /* box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.4); */
+  transform: scale(1.5);
+  /* box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.4); */
 }
