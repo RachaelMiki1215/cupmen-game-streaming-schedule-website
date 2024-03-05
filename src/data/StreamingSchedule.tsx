@@ -13,10 +13,7 @@ const MyYouTube: SocialAccount = {
 };
 
 const MyYouTubeLive = ({ url }: { url: string }): SocialAccount => {
-  const MyYouTubeLive = MyYouTube;
-  MyYouTubeLive.url = url;
-
-  return MyYouTubeLive;
+  return { ...MyYouTube, url: url };
 };
 
 const MyKick: SocialAccount = {
