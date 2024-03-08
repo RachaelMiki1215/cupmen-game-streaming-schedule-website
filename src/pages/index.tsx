@@ -30,7 +30,10 @@ const StreamingMaterialsDiv: React.FC = () => {
   return (
     <div>
       <h2>🧰配布素材🧰</h2>
-      <p>（準備中🚧）</p>
+      <iframe
+        src="./streaming-resources/time"
+        style={{ border: "none", borderRadius: "10px" }}
+      ></iframe>
     </div>
   );
 };
@@ -132,23 +135,26 @@ const IndexPage: React.FC<PageProps> = () => {
   useObserver(resourceSectionRef);
 
   return (
-    <Layout>
-      <main>
-        <h1>カップ麺</h1>
-        <section className={Style.section} ref={calendarRef}>
-          <CalendarDiv />
-        </section>
-        <section className={Style.section} ref={streamingMaterialsSectionRef}>
-          <StreamingMaterialsDiv />
-        </section>
-        <section className={Style.section} ref={aboutSectionRef}>
-          <AboutDiv />
-        </section>
-        <section className={Style.section} ref={resourceSectionRef}>
-          <ResourceDiv />
-        </section>
-      </main>
-    </Layout>
+    <>
+      <Layout>
+        <main>
+          <h1>カップ麺</h1>
+          <section className={Style.section} ref={calendarRef}>
+            <CalendarDiv />
+          </section>
+          <section className={Style.section} ref={streamingMaterialsSectionRef}>
+            <StreamingMaterialsDiv />
+          </section>
+          <section className={Style.section} ref={aboutSectionRef}>
+            <AboutDiv />
+          </section>
+          <section className={Style.section} ref={resourceSectionRef}>
+            <ResourceDiv />
+          </section>
+        </main>
+      </Layout>
+      Router
+    </>
   );
 };
 
@@ -164,7 +170,7 @@ export const Head: HeadFC = () => (
     />
     <script
       src="https://kit.fontawesome.com/ed0b8ed380.js"
-      crossorigin="anonymous"
+      crossOrigin="anonymous"
     ></script>
   </>
 );
