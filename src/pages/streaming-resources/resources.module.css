@@ -1,0 +1,12 @@
+.body {
+  all: unset;
+  position: absolute;
+  background: white;
+  padding: 10px 20px;
+  box-sizing: border-box;
+  font-family: monospace;
+}
+.body > * {
+  position: relative;
+  width: max-content;
+}
