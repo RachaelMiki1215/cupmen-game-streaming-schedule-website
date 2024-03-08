@@ -52,13 +52,11 @@ const config: GatsbyConfig = {
         },
       },
     },
+  ],
+  headers: [
     {
-      resolve: "gatsby-plugin-netlify",
-      options: {
-        headers: {
-          "/*": ["X-Frame-Options: SAMEORIGIN"],
-        },
-      },
+      source: "/",
+      headers: [{ key: "X-Frame-Options", value: "SAMEORIGIN" }],
     },
   ],
 };
