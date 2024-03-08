@@ -6,6 +6,7 @@ import StreamingSchedule from "../data/StreamingSchedule";
 import Layout from "../components/Layout/Layout";
 import StreamButton from "../components/StreamButton/StreamButton";
 import { useObserver } from "../hooks/ObserverHooks";
+import { TimeIframeDiv } from "./streaming-resources/time";
 
 const contentArr = StreamingSchedule.map((s) => {
   return {
@@ -26,14 +27,16 @@ const CalendarDiv: React.FC = () => {
   );
 };
 
-const StreamingMaterialsDiv: React.FC = () => {
+const StreamingMaterialsDiv: React.FC<{ location: any }> = ({
+  location,
+}: {
+  location: any;
+}) => {
   return (
     <div>
       <h2>🧰配布素材🧰</h2>
-      <iframe
-        src="./streaming-resources/time"
-        style={{ border: "none", borderRadius: "10px" }}
-      ></iframe>
+      <h3>時計表示</h3>
+      <TimeIframeDiv location={location} />
     </div>
   );
 };
@@ -125,7 +128,7 @@ const ResourceDiv: React.FC = () => {
   );
 };
 
-const IndexPage: React.FC<PageProps> = () => {
+const IndexPage: React.FC<PageProps> = ({ location }) => {
   const calendarRef = useRef<HTMLElement>(null);
   const streamingMaterialsSectionRef = useRef<HTMLElement>(null);
   const aboutSectionRef = useRef<HTMLElement>(null);
@@ -135,26 +138,23 @@ const IndexPage: React.FC<PageProps> = () => {
   useObserver(resourceSectionRef);
 
   return (
-    <>
-      <Layout>
-        <main>
-          <h1>カップ麺</h1>
-          <section className={Style.section} ref={calendarRef}>
-            <CalendarDiv />
-          </section>
-          <section className={Style.section} ref={streamingMaterialsSectionRef}>
-            <StreamingMaterialsDiv />
-          </section>
-          <section className={Style.section} ref={aboutSectionRef}>
-            <AboutDiv />
-          </section>
-          <section className={Style.section} ref={resourceSectionRef}>
-            <ResourceDiv />
-          </section>
-        </main>
-      </Layout>
-      Router
-    </>
+    <Layout>
+      <main>
+        <h1>カップ麺</h1>
+        <section className={Style.section} ref={calendarRef}>
+          <CalendarDiv />
+        </section>
+        <section className={Style.section} ref={streamingMaterialsSectionRef}>
+          <StreamingMaterialsDiv location={location} />
+        </section>
+        <section className={Style.section} ref={aboutSectionRef}>
+          <AboutDiv />
+        </section>
+        <section className={Style.section} ref={resourceSectionRef}>
+          <ResourceDiv />
+        </section>
+      </main>
+    </Layout>
   );
 };
 

@@ -1,12 +1,11 @@
-.body {
-  all: unset;
-  position: absolute;
-  background: white;
-  padding: 10px 20px;
-  box-sizing: border-box;
-  font-family: monospace;
+@import url("https://fonts.googleapis.com/css2?family=Yomogi&display=swap");
+@import url("../../styles/variable.css");
+
+.streamingMaterialDiv {
+  display: flex;
+  flex-direction: row;
 }
-.body > * {
-  position: relative;
-  width: max-content;
+.streamingMaterialDiv > iframe {
+  border: none;
+  border-radius: 10px;
 }
