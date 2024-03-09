@@ -30,10 +30,10 @@ const StreamingMaterialsDiv: React.FC = () => {
   return (
     <div>
       <h2>🧰配布素材🧰</h2>
-      {/* <iframe
+      <iframe
         src="./streaming-resources/time"
         style={{ border: "none", borderRadius: "10px" }}
-      ></iframe> */}
+      ></iframe>
     </div>
   );
 };
@@ -135,26 +135,23 @@ const IndexPage: React.FC<PageProps> = () => {
   useObserver(resourceSectionRef);
 
   return (
-    <>
-      <Layout>
-        <main>
-          <h1>カップ麺</h1>
-          <section className={Style.section} ref={calendarRef}>
-            <CalendarDiv />
-          </section>
-          <section className={Style.section} ref={streamingMaterialsSectionRef}>
-            <StreamingMaterialsDiv />
-          </section>
-          <section className={Style.section} ref={aboutSectionRef}>
-            <AboutDiv />
-          </section>
-          <section className={Style.section} ref={resourceSectionRef}>
-            <ResourceDiv />
-          </section>
-        </main>
-      </Layout>
-      Router
-    </>
+    <Layout>
+      <main>
+        <h1>カップ麺</h1>
+        <section className={Style.section} ref={calendarRef}>
+          <CalendarDiv />
+        </section>
+        <section className={Style.section} ref={streamingMaterialsSectionRef}>
+          <StreamingMaterialsDiv />
+        </section>
+        <section className={Style.section} ref={aboutSectionRef}>
+          <AboutDiv />
+        </section>
+        <section className={Style.section} ref={resourceSectionRef}>
+          <ResourceDiv />
+        </section>
+      </main>
+    </Layout>
   );
 };
 
