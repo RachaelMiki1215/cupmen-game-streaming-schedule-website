@@ -53,12 +53,12 @@ const config: GatsbyConfig = {
       },
     },
   ],
-  headers: [
-    {
-      source: "/*",
-      headers: [{ key: "X-Frame-Options", value: "SAMEORIGIN" }],
-    },
-  ],
+  // headers: [
+  //   {
+  //     source: "/*",
+  //     headers: [{ key: "X-Frame-Options", value: "SAMEORIGIN" }],
+  //   },
+  // ],
 };
 
 export default config;
