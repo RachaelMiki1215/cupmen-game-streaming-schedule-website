@@ -30,10 +30,10 @@ const StreamingMaterialsDiv: React.FC = () => {
   return (
     <div>
       <h2>🧰配布素材🧰</h2>
-      <iframe
+      {/* <iframe
         src="./streaming-resources/time"
         style={{ border: "none", borderRadius: "10px" }}
-      ></iframe>
+      ></iframe> */}
     </div>
   );
 };
