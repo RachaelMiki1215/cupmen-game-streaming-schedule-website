@@ -56,7 +56,7 @@ const config: GatsbyConfig = {
   headers: [
     {
       source: "/*",
-      headers: [{ key: "X-Frame-Options", value: "SAMEORIGIN" }],
+      headers: [{ key: "x-frame-options", value: "SAMEORIGIN" }],
     },
   ],
 };
