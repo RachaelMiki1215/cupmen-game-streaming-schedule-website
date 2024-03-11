@@ -1,0 +1,45 @@
+.button {
+  position: relative;
+  border: none;
+  border-radius: 15px;
+  max-width: 400px;
+  background: var(--panel-color);
+  font-family: "Yomogi", monospace;
+  font-weight: bold;
+  font-size: 1.2rem;
+  color: var(--text-color);
+  overflow: hidden;
+  padding: 0;
+  cursor: pointer;
+}
+
+.overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 5;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  opacity: 0;
+  background: rgba(from var(--panel-color) r g b / 1);
+  backdrop-filter: blur(2px);
+  width: 100%;
+  height: 100%;
+  transition: opacity 0.5s ease;
+}
+.overlay > svg {
+  height: calc(100% - 10px * 2);
+}
+
+.button:hover > .overlay {
+  opacity: 1;
+}
+
+.contentDisplay {
+  z-index: 1;
+  padding: 10px 20px;
+  text-wrap: nowrap;
+  text-overflow: ellipsis;
+  overflow: hidden;
+}
