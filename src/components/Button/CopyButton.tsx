@@ -9,6 +9,7 @@ interface Props {
   contentsToCopy?: any;
 }
 
+// TODO: Figure out why this button isn't shrinking along with container size.
 const CopyButton: React.FC<Props> = ({
   children,
   buttonClassName,

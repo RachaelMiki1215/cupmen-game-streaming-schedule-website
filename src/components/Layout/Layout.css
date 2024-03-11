@@ -113,10 +113,14 @@ ul {
 }
 ul > li {
   padding-left: 10px;
+}
+
+li {
   padding-bottom: 5px;
 }
 
 p,
-ul {
-  margin: 0 20px 0 20px;
+ul,
+ol {
+  margin: 0 20px;
 }

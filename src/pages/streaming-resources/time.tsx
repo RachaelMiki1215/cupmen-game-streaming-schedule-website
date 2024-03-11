@@ -71,9 +71,19 @@ const TimeIframeDiv: React.FC<{ location: any }> = ({
     <div className={Styles.streamingMaterialDiv}>
       <iframe src={`.${widgetPath}`} />
       <div>
-        <CopyButton
-          contentsToCopy={`${location.origin}${widgetPath}`}
-        >{`${location.origin}${widgetPath}`}</CopyButton>
+        <h4>使用方法</h4>
+        <ol>
+          <li>
+            <span>下のURLをクリックしてコピー👇</span>
+            <br />
+            <CopyButton
+              contentsToCopy={`${location.origin}${widgetPath}`}
+            >{`${location.origin}${widgetPath}`}</CopyButton>
+          </li>
+          <li>
+            OBSもしくはStream LabsでブラウザソースのURL欄に、取得したURLを貼付
+          </li>
+        </ol>
       </div>
     </div>
   );
