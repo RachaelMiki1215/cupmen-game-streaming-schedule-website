@@ -43,3 +43,13 @@
   text-overflow: ellipsis;
   overflow: hidden;
 }
+
+.toast {
+  transition: opacity 0.5s ease;
+}
+.toast.show {
+  opacity: 1;
+}
+.toast.hide {
+  opacity: 0;
+}
