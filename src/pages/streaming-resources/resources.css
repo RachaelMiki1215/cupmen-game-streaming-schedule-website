@@ -17,6 +17,7 @@
   position: relative;
   width: max-content;
 }
+
 .time-container {
   padding: 10px 20px;
   box-sizing: border-box;
@@ -24,4 +25,11 @@
   border-radius: 15px;
   font-family: "MihiPixelMoji", monospace;
   font-size: 3rem;
+}
+.colon {
+  padding: 0 4px;
+}
+.am-pm {
+  font-size: 2rem;
+  padding-left: 8px;
 }
