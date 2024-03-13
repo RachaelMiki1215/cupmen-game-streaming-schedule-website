@@ -4,6 +4,7 @@ import useQueryParams from "../../hooks/QueryParamHooks";
 import "./resources.css";
 import * as Styles from "./resources.module.css";
 import CopyButton from "../../components/Button/CopyButton";
+import RadioButtonList from "../../components/RadioButton/RadioButtonList";
 
 const TimePage: React.FC<PageProps> = ({ location }) => {
   const params = useQueryParams(location.search);
@@ -46,7 +47,7 @@ const TimePage: React.FC<PageProps> = ({ location }) => {
         </>
       )}
       {displayFormat === 12 && (
-        <span className=".am-pm">{time.getHours() < 12 ? " AM" : " PM"}</span>
+        <span className="am-pm">{time.getHours() < 12 ? " AM" : " PM"}</span>
       )}
     </div>
   );
@@ -73,6 +74,50 @@ const TimeIframeDiv: React.FC<{ location: any }> = ({
       <div>
         <h4>使用方法</h4>
         <ol>
+          <li>
+            <span>表示方式を選択：</span>
+            <br />
+            <RadioButtonList
+              items={[
+                {
+                  label: "12hrs (AM/PM)",
+                  action: () => {
+                    setDisplayFormat(12);
+                  },
+                },
+                {
+                  label: "24hrs",
+                  action: () => {
+                    setDisplayFormat(24);
+                  },
+                  checkedOnDefault: true,
+                },
+              ]}
+              id="timeDisplayFormat"
+            />
+          </li>
+          <li>
+            <span>秒を表示するか選択：</span>
+            <br />
+            <RadioButtonList
+              items={[
+                {
+                  label: "する",
+                  action: () => {
+                    setShowSeconds(true);
+                  },
+                },
+                {
+                  label: "しない",
+                  action: () => {
+                    setShowSeconds(false);
+                  },
+                  checkedOnDefault: true,
+                },
+              ]}
+              id="showSeconds"
+            />
+          </li>
           <li>
             <span>下のURLをクリックしてコピー👇</span>
             <br />
