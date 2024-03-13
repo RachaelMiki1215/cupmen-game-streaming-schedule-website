@@ -1,0 +1,35 @@
+@import url("../../styles/variable.css");
+
+.container {
+  display: flex;
+  flex-direction: row;
+  background: var(--text-color);
+  color: var(--panel-color);
+  width: fit-content;
+  border: none;
+  padding: 0;
+  border-radius: 100px;
+  overflow: hidden;
+}
+
+.label {
+  min-width: 100px;
+  padding: 5px 10px;
+  border-radius: 100px;
+  text-align: center;
+  cursor: pointer;
+  user-select: none;
+  transition: background 0.5s ease, color 0.5s ease;
+}
+.label:has(input:checked) {
+  background: var(--highlight-color);
+  color: var(--text-color);
+}
+
+.radioButton {
+  opacity: 0;
+  width: 0;
+  height: 0;
+  padding: 0;
+  margin: 0;
+}
