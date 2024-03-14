@@ -34,7 +34,10 @@ const RadioButtonList: React.FC<Props> = ({
     <fieldset className={`${Styles.container} ${containerClass}`}>
       {items.map((item, i) => {
         return (
-          <label className={Styles.label}>
+          <label
+            className={Styles.label}
+            key={`radioBtnLabel_${id}_${Math.random}`}
+          >
             {item.label}
             <input
               type="radio"
