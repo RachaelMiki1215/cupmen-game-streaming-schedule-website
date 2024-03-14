@@ -11,6 +11,9 @@
   border: none;
   border-radius: 10px;
 }
+.streamingMaterialDescription > h4 {
+  text-align: left;
+}
 
 @media (max-width: 799px) {
   .streamingMaterialDiv {

@@ -71,7 +71,7 @@ const TimeIframeDiv: React.FC<{ location: any }> = ({
   return (
     <div className={Styles.streamingMaterialDiv}>
       <iframe src={`.${widgetPath}`} />
-      <div>
+      <div className={Styles.streamingMaterialDescription}>
         <h4>使用方法</h4>
         <ol>
           <li>
