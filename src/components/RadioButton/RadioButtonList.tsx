@@ -36,7 +36,7 @@ const RadioButtonList: React.FC<Props> = ({
         return (
           <label
             className={Styles.label}
-            key={`radioBtnLabel_${id}_${Math.random}`}
+            key={`radioBtnLabel_${id}_${Math.random()}`}
           >
             {item.label}
             <input
