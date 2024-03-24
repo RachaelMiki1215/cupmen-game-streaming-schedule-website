@@ -7,9 +7,9 @@
   justify-content: center;
   align-items: center;
 }
-.streamingMaterialDiv > iframe {
-  border: none;
-  border-radius: 10px;
+.timeContainer {
+  padding: 20px;
+  width: 250px;
 }
 .streamingMaterialDescription > h4 {
   text-align: left;
@@ -18,5 +18,8 @@
 @media (max-width: 799px) {
   .streamingMaterialDiv {
     flex-direction: column;
+  }
+  .streamingMaterialDescription > h4 {
+    text-align: center;
   }
 }
