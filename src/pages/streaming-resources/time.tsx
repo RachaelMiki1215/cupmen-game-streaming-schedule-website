@@ -191,6 +191,10 @@ const TimeWidgetDiv: React.FC<{ location: any }> = ({
           <li>
             OBSもしくはStream LabsでブラウザソースのURL欄に、取得したURLを貼付
           </li>
+          <li>
+            OBSもしくはStream
+            LabsでブラウザソースのCSS欄に、取得したテキストを貼付
+          </li>
         </ol>
       </div>
     </div>
