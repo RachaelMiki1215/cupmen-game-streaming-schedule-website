@@ -177,10 +177,7 @@ const TimeWidgetDiv: React.FC<{ location: any }> = ({
               id="showSeconds"
             />
           </li>
-          <li>
-            <span>色や形を変更：</span>
-            <br />
-          </li>
+          <li>{/* TODO: Add Color/Font customization here */}</li>
           <li>
             <span>下のURLをクリックしてコピー👇</span>
             <br />
