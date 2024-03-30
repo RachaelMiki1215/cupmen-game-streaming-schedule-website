@@ -25,6 +25,9 @@
   border-radius: 15px;
   font-family: "MihiPixelMoji", monospace;
   font-size: 3rem;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
 }
 .colon {
   padding: 0 4px;
@@ -32,4 +35,5 @@
 .am-pm {
   font-size: 2rem;
   padding-left: 8px;
+  align-self: flex-end;
 }

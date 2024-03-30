@@ -6,7 +6,7 @@ import StreamingSchedule from "../data/StreamingSchedule";
 import Layout from "../components/Layout/Layout";
 import StreamButton from "../components/StreamButton/StreamButton";
 import { useObserver } from "../hooks/ObserverHooks";
-import { TimeIframeDiv } from "./streaming-resources/time";
+import { TimeWidgetDiv } from "./streaming-resources/time";
 
 const contentArr = StreamingSchedule.map((s) => {
   return {
@@ -36,7 +36,7 @@ const StreamingMaterialsDiv: React.FC<{ location: any }> = ({
     <div>
       <h2>🧰配布素材🧰</h2>
       <h3>時計表示</h3>
-      <TimeIframeDiv location={location} />
+      <TimeWidgetDiv location={location} />
     </div>
   );
 };
