@@ -177,7 +177,7 @@ const TimeWidgetDiv: React.FC<{ location: any }> = ({
               id="showSeconds"
             />
           </li>
-          <li>{/* TODO: Add Color/Font customization here */}</li>
+          {/* TODO: Add Color/Font customization here */}
           <li>
             <span>下のURLをクリックしてコピー👇</span>
             <br />
@@ -188,10 +188,10 @@ const TimeWidgetDiv: React.FC<{ location: any }> = ({
           <li>
             OBSもしくはStream LabsでブラウザソースのURL欄に、取得したURLを貼付
           </li>
-          <li>
+          {/* <li>
             OBSもしくはStream
             LabsでブラウザソースのCSS欄に、取得したテキストを貼付
-          </li>
+          </li> */}
         </ol>
       </div>
     </div>
