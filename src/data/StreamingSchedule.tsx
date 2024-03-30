@@ -500,6 +500,115 @@ const StreamingSchedule: StreamingScheduleType[] = [
       MyTwitch,
     ],
   },
+  {
+    datetime: new Date("2024-04-01T22:00:00-05:00"),
+    game: "Terraria",
+    title: "【第11回】カップ麺がTerrariaやるらしい【ゲームプレイ配信】",
+    description: "",
+    platform: [MyYouTubeLive({ url: "" }), MyKick, MyTwitch],
+  },
+  {
+    datetime: new Date("2024-04-02T22:00:00-05:00"),
+    game: "Minecraft (Java)",
+    title: "【第31回】カップ麺がのんびりマイクラするよ【ゲームプレイ配信】",
+    description: "",
+    platform: [MyYouTubeLive({ url: "" }), MyKick, MyTwitch],
+  },
+  {
+    datetime: new Date("2024-04-04T22:00:00-05:00"),
+    game: "Undertale",
+    title: "【第3回】カップ麺がUndertaleで未知に遭遇【ゲームプレイ配信】",
+    description: "",
+    platform: [MyYouTubeLive({ url: "" }), MyKick, MyTwitch],
+  },
+  {
+    datetime: new Date("2024-04-08T22:00:00-05:00"),
+    game: "Terraria",
+    title: "【第12回】カップ麺がTerrariaやるらしい【ゲームプレイ配信】",
+    description: "",
+    platform: [MyYouTubeLive({ url: "" }), MyKick, MyTwitch],
+  },
+  {
+    datetime: new Date("2024-04-09T22:00:00-05:00"),
+    game: "Minecraft (Java)",
+    title: "【第32回】カップ麺がのんびりマイクラするよ【ゲームプレイ配信】",
+    description: "",
+    platform: [MyYouTubeLive({ url: "" }), MyKick, MyTwitch],
+  },
+  // TODO: Need to determine game
+  {
+    datetime: new Date("2024-04-11T22:00:00-05:00"),
+    game: "(未定)",
+    title: "(未定)",
+    description: "",
+    platform: [MyYouTubeLive({ url: "" }), MyKick, MyTwitch],
+  },
+  {
+    datetime: new Date("2024-04-15T22:00:00-05:00"),
+    game: "Terraria",
+    title: "【第13回】カップ麺がTerrariaやるらしい【ゲームプレイ配信】",
+    description: "",
+    platform: [MyYouTubeLive({ url: "" }), MyKick, MyTwitch],
+  },
+  {
+    datetime: new Date("2024-04-16T22:00:00-05:00"),
+    game: "Minecraft (Java)",
+    title: "【第33回】カップ麺がのんびりマイクラするよ【ゲームプレイ配信】",
+    description: "",
+    platform: [MyYouTubeLive({ url: "" }), MyKick, MyTwitch],
+  },
+  // TODO: Need to determine game
+  {
+    datetime: new Date("2024-04-18T22:00:00-05:00"),
+    game: "(未定)",
+    title: "(未定)",
+    description: "",
+    platform: [MyYouTubeLive({ url: "" }), MyKick, MyTwitch],
+  },
+  {
+    datetime: new Date("2024-04-22T22:00:00-05:00"),
+    game: "Terraria",
+    title: "【第14回】カップ麺がTerrariaやるらしい【ゲームプレイ配信】",
+    description: "",
+    platform: [MyYouTubeLive({ url: "" }), MyKick, MyTwitch],
+  },
+  {
+    datetime: new Date("2024-04-23T22:00:00-05:00"),
+    game: "Minecraft (Java)",
+    title: "【第34回】カップ麺がのんびりマイクラするよ【ゲームプレイ配信】",
+    description: "",
+    platform: [MyYouTubeLive({ url: "" }), MyKick, MyTwitch],
+  },
+  // TODO: Need to determine game
+  {
+    datetime: new Date("2024-04-25T22:00:00-05:00"),
+    game: "(未定)",
+    title: "(未定)",
+    description: "",
+    platform: [MyYouTubeLive({ url: "" }), MyKick, MyTwitch],
+  },
+  {
+    datetime: new Date("2024-04-29T22:00:00-05:00"),
+    game: "Terraria",
+    title: "【第15回】カップ麺がTerrariaやるらしい【ゲームプレイ配信】",
+    description: "",
+    platform: [MyYouTubeLive({ url: "" }), MyKick, MyTwitch],
+  },
+  {
+    datetime: new Date("2024-04-30T22:00:00-05:00"),
+    game: "Minecraft (Java)",
+    title: "【第35回】カップ麺がのんびりマイクラするよ【ゲームプレイ配信】",
+    description: "",
+    platform: [MyYouTubeLive({ url: "" }), MyKick, MyTwitch],
+  },
+  // TODO: Need to determine game
+  {
+    datetime: new Date("2024-05-02T22:00:00-05:00"),
+    game: "(未定)",
+    title: "(未定)",
+    description: "",
+    platform: [MyYouTubeLive({ url: "" }), MyKick, MyTwitch],
+  },
 ];
 
 export default StreamingSchedule;
