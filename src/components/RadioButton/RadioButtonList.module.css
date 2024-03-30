@@ -22,8 +22,7 @@
   transition: background 0.5s ease, color 0.5s ease;
 }
 .label:has(input:checked) {
-  background: var(--highlight-color);
-  color: var(--text-color);
+  background: var(--header-color);
 }
 
 .radioButton {

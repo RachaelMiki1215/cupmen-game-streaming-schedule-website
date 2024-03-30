@@ -17,9 +17,10 @@
 }
 
 .streamDetails {
-  background: var(--panel-color);
+  background: hsl(from var(--panel-color) h s l / 50%);
+  backdrop-filter: blur(10px);
   border-radius: 20px;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.4);
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.4);
   width: 400px;
   height: auto;
   padding: 10px 20px;

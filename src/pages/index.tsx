@@ -19,8 +19,8 @@ const CalendarDiv: React.FC = () => {
   return (
     <div className={Style.calendarDiv}>
       <h2>
-        <span>🎮ゲーム配信</span>
-        <span>スケジュール🎮</span>
+        <span>🎲ゲーム配信</span>
+        <span>スケジュール🎲</span>
       </h2>
       <MyCalendar contents={contentArr} />
     </div>

@@ -21,7 +21,7 @@
 .time-container {
   padding: 10px 20px;
   box-sizing: border-box;
-  background-color: var(--highlight-color);
+  background-color: var(--header-color);
   border-radius: 15px;
   font-family: "MihiPixelMoji", monospace;
   font-size: 3rem;

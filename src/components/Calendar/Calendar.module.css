@@ -61,7 +61,7 @@
   overflow: hidden;
 }
 .today {
-  background: var(--highlight-color);
+  background: var(--header-color);
 }
 .weekend {
   background: hsl(from var(--panel-color) h s l / 80%);

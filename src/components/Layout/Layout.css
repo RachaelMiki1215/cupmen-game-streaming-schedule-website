@@ -6,11 +6,11 @@
   width: 20px;
 }
 ::-webkit-scrollbar-track {
-  background: var(--text-color);
+  background: var(--bg-color);
   padding: 5px;
 }
 ::-webkit-scrollbar-thumb {
-  background: var(--bg-color);
+  background: var(--text-color);
 }
 
 body {
@@ -19,7 +19,8 @@ body {
   width: 100%;
   background: var(--bg-color);
   background-image: url("../../images/raimon-illust_png.png");
-  background-size: 100px;
+  background-blend-mode: color-burn;
+  background-size: 200px;
   background-position: 10px 20px;
   background-attachment: fixed;
   color: var(--text-color);
@@ -82,7 +83,7 @@ strong {
 }
 
 a {
-  background-color: var(--highlight-color);
+  background-color: var(--header-color);
   text-decoration: none;
 }
 a::before {
