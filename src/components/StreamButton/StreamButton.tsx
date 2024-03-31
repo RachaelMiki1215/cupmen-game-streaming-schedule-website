@@ -44,7 +44,7 @@ const StreamButton: React.FC<{ item: StreamingScheduleType }> = ({ item }) => {
 
   return (
     <div ref={cardRef} className={Style.streamButton}>
-      <div>{`${item.datetime
+      <div className={Style.timeDisplay}>{`${item.datetime
         .getHours()
         .toString()
         .padStart(2, "0")}:${item.datetime

@@ -19,12 +19,11 @@
 }
 .buttons > * {
   font-family: "MihiPixelMoji", monospace;
-  /* font-weight: bold; */
   font-size: 1.8rem;
   border: none;
   background: none;
   cursor: pointer;
-  color: inherit;
+  color: var(--header-color-2);
 }
 
 .calendar {
@@ -42,7 +41,10 @@
   height: 40px;
   text-transform: uppercase;
   font-family: "MihiPixelMoji", monospace;
-  /* font-weight: bold; */
+  color: var(--header-color-2);
+}
+.weekendDayHeader {
+  color: var(--text-color);
 }
 
 .dateCell {
@@ -60,14 +62,17 @@
   position: relative;
   overflow: hidden;
 }
-.today {
-  background: var(--header-color);
+.dateNum {
+  color: var(--header-color-2);
 }
 .weekend {
-  background: hsl(from var(--panel-color) h s l / 80%);
+  background: hsl(from var(--panel-color) h s l / 50%);
 }
 .otherMonth {
-  background: hsl(from var(--panel-color) h s l / 40%);
+  background: hsl(from var(--panel-color) h s l / 10%);
+}
+.today {
+  background: hsl(from var(--header-color) h s l / 60%);
 }
 
 .backdropLayer {

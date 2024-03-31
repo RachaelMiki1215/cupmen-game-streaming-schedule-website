@@ -131,7 +131,6 @@ const TimeWidgetDiv: React.FC<{ location: any }> = ({
         <TimeDisplay displayFormat={displayFormat} showSeconds={showSeconds} />
       </div>
       <div className={Styles.streamingMaterialDescription}>
-        <h4>使用方法</h4>
         <ol>
           <li>
             <span>表示方式を選択：</span>

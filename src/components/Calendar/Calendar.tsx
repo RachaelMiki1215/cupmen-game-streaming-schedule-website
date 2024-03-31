@@ -35,9 +35,9 @@ interface CalendarReducerAction {
 //#endregion
 
 //#region arrays
-const weekdays: string[] = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"];
+const weekdaysJA: string[] = ["日", "月", "火", "水", "木", "金", "土"];
 
-const months: string[] = [
+const monthsEN: string[] = [
   "Jan",
   "Feb",
   "Mar",
@@ -183,17 +183,18 @@ const MyCalendar: React.FC<CalendarProps> = ({ contents }) => {
           <FontAwesomeIcon icon={faCaretLeft} />
         </button>
         <button onClick={resetCalendar}>
-          {months[calendarState.monthIndex]} {calendarState.year}
+          {calendarState.year}年 {calendarState.monthIndex + 1}月
         </button>
         <button onClick={getNextMonth}>
           <FontAwesomeIcon icon={faCaretRight} />
         </button>
       </div>
       <div className={Style.calendar}>
-        {weekdays.map((day, index) => (
+        {weekdaysJA.map((day, index) => (
           <div
-            className={Style.dayHeader}
-            style={index === 0 || index === 6 ? { color: "gold" } : {}}
+            className={`${Style.dayHeader} ${
+              index === 0 || index === 6 ? Style.weekendDayHeader : ""
+            }`}
             key={`weekday_${day}`}
           >
             {day}
@@ -203,25 +204,25 @@ const MyCalendar: React.FC<CalendarProps> = ({ contents }) => {
           <div
             key={`day_${date.toString()}`}
             className={`${Style.dateCell} ${
-              date.getFullYear() === currentDate.getFullYear() &&
-              date.getMonth() === currentDate.getMonth() &&
-              date.getDate() === currentDate.getDate()
-                ? Style.today
-                : ""
-            } ${
               date.getDay() === 0 || date.getDay() === 6 ? Style.weekend : ""
             } ${
               date.getMonth() === calendarState.monthIndex
                 ? ""
                 : Style.otherMonth
+            } ${
+              date.getFullYear() === currentDate.getFullYear() &&
+              date.getMonth() === currentDate.getMonth() &&
+              date.getDate() === currentDate.getDate()
+                ? Style.today
+                : ""
             }`}
           >
             <div className={Style.backdropLayer}></div>
-            <span>
+            <span className={Style.dateNum}>
               {date.getMonth() != calendarState.monthIndex &&
                 `${date.getMonth() + 1}/`}
               {date.getDate()}
-              {windowSize.width < 600 ? ` (${weekdays[date.getDay()]})` : ""}
+              {windowSize.width < 600 ? ` (${weekdaysJA[date.getDay()]})` : ""}
             </span>
             {contents &&
               contents

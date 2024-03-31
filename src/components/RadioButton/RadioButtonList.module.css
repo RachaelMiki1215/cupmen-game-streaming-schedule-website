@@ -3,8 +3,9 @@
 .container {
   display: flex;
   flex-direction: row;
-  background: var(--text-color);
-  color: var(--panel-color);
+  background: var(--header-color-2);
+  color: var(--bg-color);
+  font-weight: bold;
   width: fit-content;
   border: none;
   padding: 0;
@@ -19,7 +20,8 @@
   text-align: center;
   cursor: pointer;
   user-select: none;
-  transition: background 0.5s ease, color 0.5s ease;
+  background: rgba(0, 0, 0, 0);
+  transition: background 0.5s ease;
 }
 .label:has(input:checked) {
   background: var(--header-color);

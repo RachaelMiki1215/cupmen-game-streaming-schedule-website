@@ -9,11 +9,15 @@
   cursor: pointer;
   max-height: 200px;
   overflow: hidden;
-  box-shadow: none;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.4);
   transition: box-shadow 0.5s ease;
 }
 .streamButton:hover {
-  box-shadow: 0 0 5px rgba(0, 0, 0, 0.4);
+  box-shadow: 0 0 5px hsl(from var(--text-color) h s l / 80%);
+}
+
+.timeDisplay {
+  color: var(--header-color-2);
 }
 
 .streamDetails {
@@ -32,6 +36,9 @@
   grid-template-columns: 1fr 4fr;
   row-gap: 10px;
   cursor: initial;
+}
+.streamDetails > dt {
+  color: var(--header-color-2);
 }
 .streamDetails > dt::after {
   content: ":";
