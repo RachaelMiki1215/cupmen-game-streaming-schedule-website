@@ -43,7 +43,10 @@ const TimeDisplay: React.FC<TimeProps> = ({
   return (
     <div className="time-container" style={containerStyle}>
       <span className="hours" style={hourStyle}>
-        {(time.getHours() % (displayFormat === 12 ? 12 : 24))
+        {(time.getHours() === 0 && displayFormat === 12
+          ? 12
+          : time.getHours() % (displayFormat === 12 ? 12 : 24)
+        )
           .toString()
           .padStart(2, "0")}
       </span>
