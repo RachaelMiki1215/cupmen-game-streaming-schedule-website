@@ -200,42 +200,54 @@ const MyCalendar: React.FC<CalendarProps> = ({ contents }) => {
             {day}
           </div>
         ))}
-        {calendarState.calendarDates.map((date) => (
-          <div
-            key={`day_${date.toString()}`}
-            className={`${Style.dateCell} ${
-              date.getDay() === 0 || date.getDay() === 6 ? Style.weekend : ""
-            } ${
-              date.getMonth() === calendarState.monthIndex
-                ? ""
-                : Style.otherMonth
-            } ${
-              date.getFullYear() === currentDate.getFullYear() &&
-              date.getMonth() === currentDate.getMonth() &&
-              date.getDate() === currentDate.getDate()
-                ? Style.today
-                : ""
-            }`}
-          >
-            <div className={Style.backdropLayer}></div>
-            <span className={Style.dateNum}>
-              {date.getMonth() != calendarState.monthIndex &&
-                `${date.getMonth() + 1}/`}
-              {date.getDate()}
-              {windowSize.width < 600 ? ` (${weekdaysJA[date.getDay()]})` : ""}
-            </span>
-            {contents &&
-              contents
-                .filter((content) => {
-                  return (
-                    content.dateTime.getFullYear() === date.getFullYear() &&
-                    content.dateTime.getMonth() === date.getMonth() &&
-                    content.dateTime.getDate() === date.getDate()
-                  );
-                })
-                .map((item) => <div key={Math.random()}>{item.item}</div>)}
-          </div>
-        ))}
+        {calendarState.calendarDates.map((date) => {
+          let dayContent = contents
+            ? contents.filter((content) => {
+                return (
+                  content.dateTime.getFullYear() === date.getFullYear() &&
+                  content.dateTime.getMonth() === date.getMonth() &&
+                  content.dateTime.getDate() === date.getDate()
+                );
+              })
+            : null;
+
+          return (
+            <div
+              key={`day_${date.toString()}`}
+              className={`${Style.dateCell} ${
+                date.getDay() === 0 || date.getDay() === 6 ? Style.weekend : ""
+              } ${
+                date.getMonth() === calendarState.monthIndex
+                  ? ""
+                  : Style.otherMonth
+              } ${
+                date.getFullYear() === currentDate.getFullYear() &&
+                date.getMonth() === currentDate.getMonth() &&
+                date.getDate() === currentDate.getDate()
+                  ? Style.today
+                  : ""
+              } ${
+                dayContent === null || dayContent.length === 0
+                  ? Style.noContent
+                  : ""
+              }`}
+            >
+              <div className={Style.backdropLayer}></div>
+              <span className={Style.dateNum}>
+                {date.getMonth() != calendarState.monthIndex &&
+                  `${date.getMonth() + 1}/`}
+                {date.getDate()}
+                {windowSize.width < 600
+                  ? ` (${weekdaysJA[date.getDay()]})`
+                  : ""}
+              </span>
+              {dayContent &&
+                dayContent.map((item) => (
+                  <div key={Math.random()}>{item.item}</div>
+                ))}
+            </div>
+          );
+        })}
       </div>
     </div>
   );

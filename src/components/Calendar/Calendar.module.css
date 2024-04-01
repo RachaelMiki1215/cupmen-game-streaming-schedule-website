@@ -102,6 +102,14 @@
   .dateCell {
     min-height: unset;
   }
+  .noContent {
+    font-size: 0;
+    width: 40px;
+    height: 3px;
+    padding: 0;
+    align-self: center;
+    background: hsl(from var(--text-color) h s l / 20%);
+  }
 
   .otherMonth {
     display: none;
