@@ -10,7 +10,7 @@
   padding: 5px;
 }
 ::-webkit-scrollbar-thumb {
-  background: var(--text-color);
+  background: var(--header-color-2);
 }
 
 body {
