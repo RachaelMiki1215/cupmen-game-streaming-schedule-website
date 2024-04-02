@@ -38,3 +38,9 @@
   padding-left: 8px;
   align-self: flex-end;
 }
+.icon {
+  padding-left: 4px;
+  width: 30px;
+  height: 30px;
+  align-self: center;
+}
