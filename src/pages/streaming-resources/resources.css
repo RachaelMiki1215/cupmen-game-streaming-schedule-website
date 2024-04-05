@@ -18,7 +18,8 @@
   width: max-content;
 }
 
-.time-container {
+.time-container,
+.timer-container {
   padding: 10px 20px;
   box-sizing: border-box;
   background-color: var(--header-color);
@@ -43,4 +44,14 @@
   width: 30px;
   height: 30px;
   align-self: center;
+}
+
+.timer-minus,
+.timer-num {
+  padding: 0 5px;
+}
+.timer-unit {
+  font-size: 0.5em;
+  padding-bottom: 5px;
+  align-self: flex-end;
 }
