@@ -99,16 +99,6 @@ const TimePage: React.FC<PageProps> = ({ location }) => {
     ? /true/.test(params.showIcon)
     : false;
 
-  const [time, setDate] = useState<Date>(new Date());
-
-  useEffect(() => {
-    const intervalId = setInterval(() => {
-      setDate(new Date());
-    }, 1000);
-
-    return () => clearInterval(intervalId);
-  }, []);
-
   return (
     <TimeDisplay
       displayFormat={displayFormat}
