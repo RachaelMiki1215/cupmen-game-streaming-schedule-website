@@ -13,6 +13,11 @@
   background: var(--header-color-2);
 }
 
+::placeholder {
+  color: hsl(from var(--header-color-2) h s 50%);
+  opacity: 1;
+}
+
 body {
   margin: 0;
   padding: 0;
