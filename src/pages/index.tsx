@@ -7,6 +7,7 @@ import Layout from "../components/Layout/Layout";
 import StreamButton from "../components/StreamButton/StreamButton";
 import { useObserver } from "../hooks/ObserverHooks";
 import { TimeWidgetDiv } from "./streaming-resources/time";
+import { CountDownDiv } from "./streaming-resources/countdown";
 
 const contentArr = StreamingSchedule.map((s) => {
   return {
@@ -37,6 +38,8 @@ const StreamingMaterialsDiv: React.FC<{ location: any }> = ({
       <h2>🧰配布素材🧰</h2>
       <h3>時計表示</h3>
       <TimeWidgetDiv location={location} />
+      <h3>カウントダウンタイマー</h3>
+      <CountDownDiv location={location} />
     </div>
   );
 };
