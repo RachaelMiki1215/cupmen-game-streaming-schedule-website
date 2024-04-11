@@ -5,6 +5,7 @@ import "./resources.css";
 import * as Styles from "./resources.module.css";
 import CopyButton from "../../components/Button/CopyButton";
 import DropDown from "../../components/Dropdown/DropDown";
+import TextInput from "../../components/TextInput/TextInput";
 
 interface CountDownProps {
   time: Date;
@@ -149,8 +150,15 @@ const CountDownDiv: React.FC<{ location: any }> = ({
       <div className={Styles.streamingMaterialDescription}>
         <ol>
           <li>
-            <span>目標時刻を入力：</span>
-            {/* TODO: Add date/time selector */}
+            <span>目標日時を入力：</span>
+            <br />
+            <TextInput
+              placeholder="YYYY/MM/DD HH:mm:ss"
+              onChange={(input: string) => {
+                const inputtedDate = new Date(input);
+              }}
+            />
+            {/* TODO: Replace text input with date/time selector */}
           </li>
           <li>
             <span>表示方式を選択：</span>
@@ -185,7 +193,6 @@ const CountDownDiv: React.FC<{ location: any }> = ({
           <li>
             <span>言語を選択：</span>
             <br />
-            {/* TODO: Add dropdown to select language */}
             <DropDown
               options={[
                 {

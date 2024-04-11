@@ -1,0 +1,16 @@
+.input {
+  display: flex;
+  flex-direction: row;
+  background: var(--header-color-2);
+  color: var(--bg-color);
+  font-weight: bold;
+  width: fit-content;
+  border: none;
+  padding: 0;
+  border-radius: 100px;
+  overflow: hidden;
+  font-family: "Yomogi", monospace;
+  font-weight: bold;
+  font-size: 1.4rem;
+  padding: 5px 10px;
+}
