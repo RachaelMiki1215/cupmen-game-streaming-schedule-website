@@ -605,11 +605,10 @@ const StreamingSchedule: StreamingScheduleType[] = [
       MyTwitch,
     ],
   },
-  // TODO: Need to determine game
   {
     datetime: new Date("2024-04-18T22:00:00-05:00"),
-    game: "(未定)",
-    title: "(未定)",
+    game: "Undertale",
+    title: "【第5回】カップ麺がUndertaleで未知に遭遇【ゲームプレイ配信】",
     description: "",
     platform: [
       MyYouTubeLive({
