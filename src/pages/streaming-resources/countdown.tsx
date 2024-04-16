@@ -4,7 +4,7 @@ import useQueryParams from "../../hooks/QueryParamHooks";
 import "./resources.css";
 import * as Styles from "./resources.module.css";
 import CopyButton from "../../components/Button/CopyButton";
-import DropDown from "../../components/Dropdown/DropDown";
+// import DropDown from "../../components/Dropdown/DropDown";
 
 interface CountDownProps {
   time: Date;
@@ -155,7 +155,7 @@ const CountDownDiv: React.FC<{ location: any }> = ({
           <li>
             <span>表示方式を選択：</span>
             <br />
-            <DropDown
+            {/*<DropDown
               options={[
                 {
                   value: "hr-min-sec",
@@ -180,13 +180,13 @@ const CountDownDiv: React.FC<{ location: any }> = ({
                 },
               ]}
               defaultSelValue={"hr-min-sec"}
-            />
+            />*/}
           </li>
           <li>
             <span>言語を選択：</span>
             <br />
             {/* TODO: Add dropdown to select language */}
-            <DropDown
+            {/*<DropDown
               options={[
                 {
                   value: "ja",
@@ -211,7 +211,7 @@ const CountDownDiv: React.FC<{ location: any }> = ({
                 },
               ]}
               defaultSelValue={"ja"}
-            />
+            />*/}
           </li>
           <li>
             <span>下のURLをクリックしてコピー👇</span>
