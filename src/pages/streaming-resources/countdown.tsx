@@ -35,8 +35,8 @@ const CountDownTimer: React.FC<CountDownProps> = ({
   }, []);
 
   useEffect(() => {
-    console.log(displayFormat);
-  }, [displayFormat]);
+    setCountDown(time.getTime() - Date.now());
+  }, [time]);
 
   const units = {
     hr: (
@@ -59,6 +59,7 @@ const CountDownTimer: React.FC<CountDownProps> = ({
   const minusSign = <span className="timer-minus">-</span>;
 
   let timeDisplay;
+  timeDisplay = <span>{countDown}</span>;
   if (displayFormat === "min-sec") {
     timeDisplay = (
       <>
@@ -113,7 +114,10 @@ const CountDownPage: React.FC<PageProps> = ({ location }) => {
   const displayFormat = params.displayFormat;
   const language = params.language;
   // TODO: Figure out how to deal with NaN case
-  const time = params.time ? new Date(params.time) : new Date();
+  const time =
+    params.time && !isNaN(new Date(params.time).getTime())
+      ? new Date(params.time)
+      : new Date();
 
   return (
     <CountDownTimer
