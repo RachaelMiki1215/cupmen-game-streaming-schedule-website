@@ -21,6 +21,8 @@
 .resourceList {
   display: table;
   border-spacing: 5px;
+  margin: 0;
+  padding: 0;
 }
 .resourceListItem {
   display: table-row;
@@ -34,4 +36,19 @@
 .resourceListItem_description {
   display: table-cell;
   backdrop-filter: blur(5px);
+}
+
+@media (max-width: 599px) {
+  .resourceList {
+    border-spacing: none;
+    gap: 5px;
+  }
+  .resourceList,
+  .resourceListItem {
+    display: flex;
+    flex-direction: column;
+  }
+  .resourceListItem_description {
+    padding-left: 40px;
+  }
 }
