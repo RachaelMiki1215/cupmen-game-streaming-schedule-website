@@ -1,10 +1,13 @@
 import React, { useEffect, useRef, useState } from "react";
 import { HeadFC, PageProps } from "gatsby";
+import DateTimePicker from "react-datetime-picker";
+
 import useQueryParams from "../../hooks/QueryParamHooks";
 import "./resources.css";
 import * as Styles from "./resources.module.css";
 import CopyButton from "../../components/Button/CopyButton";
-// import DropDown from "../../components/Dropdown/DropDown";
+import DropDown from "../../components/Dropdown/DropDown";
+import TextInput from "../../components/TextInput/TextInput";
 
 interface CountDownProps {
   time: Date;
@@ -126,22 +129,22 @@ const CountDownDiv: React.FC<{ location: any }> = ({
 }: {
   location: any;
 }) => {
-  const [time, setTime] = useState<Date>(new Date());
+  const [dateTime, setDateTime] = useState<Date>(new Date());
   const [displayFormat, setDisplayFormat] = useState<string>("hr-min-sec");
   const [language, setLanguage] = useState<string>("ja");
   const [widgetPath, setWidgetPath] = useState<string>("");
 
   useEffect(() => {
     setWidgetPath(
-      `/streaming-resources/countdown?time=${time.toISOString()}&displayFormat=${displayFormat}&language=${language}`
+      `/streaming-resources/countdown?time=${dateTime.toISOString()}&displayFormat=${displayFormat}&language=${language}`
     );
-  }, [time, displayFormat, language]);
+  }, [dateTime, displayFormat, language]);
 
   return (
     <div className={Styles.streamingMaterialDiv}>
       <div className={Styles.timerContainer}>
         <CountDownTimer
-          time={time}
+          time={dateTime}
           displayFormat={displayFormat}
           language={language}
         />
@@ -149,13 +152,28 @@ const CountDownDiv: React.FC<{ location: any }> = ({
       <div className={Styles.streamingMaterialDescription}>
         <ol>
           <li>
-            <span>目標時刻を入力：</span>
-            {/* TODO: Add date/time selector */}
+            <span>目標日時を入力：</span>
+            <br />
+            <TextInput
+              placeholder="YYYY/MM/DD HH:mm:ss"
+              onChange={(input: string) => {
+                const inputtedDate = new Date(input);
+                if (!isNaN(inputtedDate.getTime())) {
+                  setDateTime(inputtedDate);
+                }
+              }}
+            />
+            {/* TODO: Replace this with actual datetime picker */}
+            {/* <DateTimePicker
+              onChange={(value) => setDateTime(value as Date)}
+              value={dateTime}
+              calendarClassName={Styles.countDownTimer_CalendarDiv}
+            /> */}
           </li>
           <li>
             <span>表示方式を選択：</span>
             <br />
-            {/*<DropDown
+            <DropDown
               options={[
                 {
                   value: "hr-min-sec",
@@ -180,13 +198,12 @@ const CountDownDiv: React.FC<{ location: any }> = ({
                 },
               ]}
               defaultSelValue={"hr-min-sec"}
-            />*/}
+            />
           </li>
           <li>
             <span>言語を選択：</span>
             <br />
-            {/* TODO: Add dropdown to select language */}
-            {/*<DropDown
+            <DropDown
               options={[
                 {
                   value: "ja",
@@ -211,7 +228,7 @@ const CountDownDiv: React.FC<{ location: any }> = ({
                 },
               ]}
               defaultSelValue={"ja"}
-            />*/}
+            />
           </li>
           <li>
             <span>下のURLをクリックしてコピー👇</span>

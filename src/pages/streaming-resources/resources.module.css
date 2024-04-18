@@ -16,6 +16,10 @@
   text-align: left;
 }
 
+.countDownTimer_CalendarDiv {
+  background: blue;
+}
+
 @media (max-width: 799px) {
   .streamingMaterialDiv {
     flex-direction: column;
