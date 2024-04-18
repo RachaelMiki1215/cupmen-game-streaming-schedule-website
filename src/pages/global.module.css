@@ -17,3 +17,21 @@
 .calendarDiv {
   width: 100%;
 }
+
+.resourceList {
+  display: table;
+  border-spacing: 5px;
+}
+.resourceListItem {
+  display: table-row;
+}
+.resourceListItem_description {
+  background: hsl(from var(--panel-color) h s l / 20%);
+  padding: 5px 10px;
+  border-radius: 10px;
+}
+.resourceListItem_name,
+.resourceListItem_description {
+  display: table-cell;
+  backdrop-filter: blur(5px);
+}

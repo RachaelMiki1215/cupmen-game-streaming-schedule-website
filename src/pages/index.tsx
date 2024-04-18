@@ -3,6 +3,7 @@ import type { HeadFC, PageProps } from "gatsby";
 import MyCalendar from "../components/Calendar/Calendar";
 import * as Style from "./global.module.css";
 import StreamingSchedule from "../data/StreamingSchedule";
+import resourceList from "../data/ResourceList";
 import Layout from "../components/Layout/Layout";
 import StreamButton from "../components/StreamButton/StreamButton";
 import { useObserver } from "../hooks/ObserverHooks";
@@ -71,58 +72,27 @@ const AboutDiv: React.FC = () => {
   );
 };
 
-const resourceList = [
-  {
-    link: "https://fontawesome.com/",
-    name: "FontAwesome",
-    description: <>JavaScriptで使えるアイコンライブラリ。凄く重宝してる✨</>,
-  },
-  {
-    link: "https://remixicon.com/",
-    name: "Remix Icon",
-    description: (
-      <>
-        同じくJavaScriptで使えるアイコンライブラリ。ニッチなところもカバーしてあって助かる🥰
-      </>
-    ),
-  },
-  {
-    link: "https://fonts.google.com/",
-    name: "Google Fonts",
-    description: (
-      <>
-        <strong>このフォント</strong>（
-        <a href="https://fonts.google.com/specimen/Yomogi" target="_blank">
-          Yomogi
-        </a>
-        ）をウェブ用に配布してくれているところ。使いやすい👍
-      </>
-    ),
-  },
-  {
-    link: "https://mihifont.netlify.app/",
-    name: "みひらめフォント",
-    description: (
-      <>
-        <strong className={Style.mihiFont}>このフォント</strong>
-        を配布してくれているところ。ありがたい🙏
-      </>
-    ),
-  },
-];
-
 const ResourceDiv: React.FC = () => {
   return (
     <div>
       <h2>🍂使用素材🍂</h2>
-      <ul>
+      <ul className={Style.resourceList}>
         {resourceList.map((r) => {
           return (
-            <li key={`resource_${Math.random()}`}>
-              <a href={r.link} target="_blank">
+            <li
+              className={Style.resourceListItem}
+              key={`resource_${Math.random()}`}
+            >
+              <a
+                className={Style.resourceListItem_name}
+                href={r.link}
+                target="_blank"
+              >
                 {r.name}
-              </a>{" "}
-              - {r.description}
+              </a>
+              <div className={Style.resourceListItem_description}>
+                {r.description}
+              </div>
             </li>
           );
         })}
