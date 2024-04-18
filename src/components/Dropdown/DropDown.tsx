@@ -13,6 +13,7 @@ interface DropDownProps {
   containerClass?: React.CSSProperties;
   activeClass?: React.CSSProperties;
   inactiveClass?: React.CSSProperties;
+  id?: string;
 }
 
 const DropDown: React.FC<DropDownProps> = ({
@@ -21,6 +22,7 @@ const DropDown: React.FC<DropDownProps> = ({
   containerClass,
   activeClass,
   inactiveClass,
+  id,
 }: DropDownProps) => {
   const [selectedValue, setSelectedValue] = useState<string>(
     options.filter((option) => option.value === defaultSelValue)[0].value
@@ -37,14 +39,13 @@ const DropDown: React.FC<DropDownProps> = ({
         handleOptionChange(e);
         options.filter((option) => option.value === e.target.value)[0].action();
       }}
+      value={selectedValue}
+      id={id ?? `dropdown_${Math.random()}`}
     >
       {/* TODO: Figure out how to customize this even more, etc. dropdown box, arrow */}
       {options.map((option) => {
         return (
-          <option
-            selected={selectedValue === option.value}
-            value={option.value}
-          >
+          <option value={option.value} key={`option_${option.value}`}>
             {option.displayText}
           </option>
         );

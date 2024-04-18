@@ -5,12 +5,14 @@ interface TextInputProps {
   className?: string;
   onChange?: (inputValue: string) => void;
   placeholder?: string;
+  id?: string;
 }
 
 const TextInput: React.FC<TextInputProps> = ({
   className,
   onChange,
   placeholder,
+  id,
 }: TextInputProps) => {
   const [inputValue, setInputValue] = useState<string>("");
 
@@ -31,6 +33,7 @@ const TextInput: React.FC<TextInputProps> = ({
   return (
     <input
       type="text"
+      id={id ?? `textinput_${Math.random()}`}
       value={inputValue}
       placeholder={placeholder ?? ""}
       onChange={(e) => {
