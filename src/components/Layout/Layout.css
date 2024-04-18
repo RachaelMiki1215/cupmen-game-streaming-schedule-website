@@ -99,11 +99,15 @@ strong {
 a {
   background-color: var(--header-color);
   text-decoration: none;
+  transition: color 0.5s ease;
 }
 a::before {
   font: var(--fa-font-solid);
   content: "\f0c1";
   padding-right: 5px;
+}
+a:hover {
+  color: var(--text-color);
 }
 
 span {
