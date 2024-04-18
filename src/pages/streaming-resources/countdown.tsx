@@ -1,5 +1,7 @@
 import React, { useEffect, useRef, useState } from "react";
 import { HeadFC, PageProps } from "gatsby";
+import DateTimePicker from "react-datetime-picker";
+
 import useQueryParams from "../../hooks/QueryParamHooks";
 import "./resources.css";
 import * as Styles from "./resources.module.css";
@@ -127,22 +129,22 @@ const CountDownDiv: React.FC<{ location: any }> = ({
 }: {
   location: any;
 }) => {
-  const [time, setTime] = useState<Date>(new Date());
+  const [dateTime, setDateTime] = useState<Date>(new Date());
   const [displayFormat, setDisplayFormat] = useState<string>("hr-min-sec");
   const [language, setLanguage] = useState<string>("ja");
   const [widgetPath, setWidgetPath] = useState<string>("");
 
   useEffect(() => {
     setWidgetPath(
-      `/streaming-resources/countdown?time=${time.toISOString()}&displayFormat=${displayFormat}&language=${language}`
+      `/streaming-resources/countdown?time=${dateTime.toISOString()}&displayFormat=${displayFormat}&language=${language}`
     );
-  }, [time, displayFormat, language]);
+  }, [dateTime, displayFormat, language]);
 
   return (
     <div className={Styles.streamingMaterialDiv}>
       <div className={Styles.timerContainer}>
         <CountDownTimer
-          time={time}
+          time={dateTime}
           displayFormat={displayFormat}
           language={language}
         />
@@ -156,9 +158,16 @@ const CountDownDiv: React.FC<{ location: any }> = ({
               placeholder="YYYY/MM/DD HH:mm:ss"
               onChange={(input: string) => {
                 const inputtedDate = new Date(input);
+                if (!isNaN(inputtedDate.getTime())) {
+                  setDateTime(inputtedDate);
+                }
               }}
             />
-            {/* TODO: Replace text input with date/time selector */}
+            {/* <DateTimePicker
+              onChange={(value) => setDateTime(value as Date)}
+              value={dateTime}
+              calendarClassName={Styles.countDownTimer_CalendarDiv}
+            /> */}
           </li>
           <li>
             <span>表示方式を選択：</span>
