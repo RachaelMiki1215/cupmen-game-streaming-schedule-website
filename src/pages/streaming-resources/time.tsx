@@ -45,6 +45,13 @@ const TimeDisplay: React.FC<TimeProps> = ({
     return () => clearInterval(intervalId);
   }, []);
 
+  let timeIcon;
+  if (time.getHours() < 5 || time.getHours() > 19) {
+    timeIcon = <RiMoonClearFill className="icon" />;
+  } else {
+    timeIcon = <RiSunFill className="icon" />;
+  }
+
   return (
     <div className="time-container" style={containerStyle}>
       <span className="hours" style={hourStyle}>
@@ -76,12 +83,7 @@ const TimeDisplay: React.FC<TimeProps> = ({
           {time.getHours() < 12 ? " AM" : " PM"}
         </span>
       )}
-      {showIcon &&
-        (time.getHours() < 5 || time.getHours() > 19 ? (
-          <RiMoonClearFill className="icon" />
-        ) : (
-          <RiSunFill className="icon" />
-        ))}
+      {showIcon && timeIcon}
     </div>
   );
 };
