@@ -565,7 +565,6 @@ const StreamingSchedule: StreamingScheduleType[] = [
       MyTwitch,
     ],
   },
-  // TODO: Need to determine game
   {
     datetime: new Date("2024-04-11T22:00:00-05:00"),
     game: "Undertale",
@@ -644,11 +643,11 @@ const StreamingSchedule: StreamingScheduleType[] = [
       MyTwitch,
     ],
   },
-  // TODO: Need to determine game
   {
     datetime: new Date("2024-04-25T22:00:00-05:00"),
-    game: "(未定)",
-    title: "(未定)",
+    game: "Undertale Yellow",
+    title:
+      "【第1回】カップ麺はUndertale Yellowをめのまえにしてケツイがみなぎった【ゲームプレイ配信】",
     description: "",
     platform: [
       MyYouTubeLive({
@@ -684,11 +683,11 @@ const StreamingSchedule: StreamingScheduleType[] = [
       MyTwitch,
     ],
   },
-  // TODO: Need to determine game
   {
     datetime: new Date("2024-05-02T22:00:00-05:00"),
-    game: "(未定)",
-    title: "(未定)",
+    game: "Undertale Yellow",
+    title:
+      "【第2回】カップ麺はUndertale Yellowをめのまえにしてケツイがみなぎった【ゲームプレイ配信】",
     description: "",
     platform: [
       MyYouTubeLive({
