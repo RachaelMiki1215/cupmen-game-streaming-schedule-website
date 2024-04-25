@@ -5,7 +5,7 @@ import "./resources.css";
 import * as Styles from "./resources.module.css";
 import CopyButton from "../../components/Button/CopyButton";
 import RadioButtonList from "../../components/RadioButton/RadioButtonList";
-import { RiMoonClearFill, RiSunFill } from "@remixicon/react";
+import MoonIcon from "../../images/svg/moon-stars-svgrepo-com.svg";
 
 interface TimeProps {
   timezone?: number;
@@ -46,11 +46,16 @@ const TimeDisplay: React.FC<TimeProps> = ({
   }, []);
 
   let timeIcon;
-  if (time.getHours() < 5 || time.getHours() > 19) {
-    timeIcon = <RiMoonClearFill className="icon" />;
-  } else {
-    timeIcon = <RiSunFill className="icon" />;
+  if (time.getHours() < 4 || time.getHours() >= 20) {
+    timeIcon = <MoonIcon />;
   }
+  // else if (time.getHours() >= 4 && time.getHours() < 7) {
+  //   timeIcon = <WiSunrise className="icon" />;
+  // } else if (time.getHours() >= 7 && time.getHours() < 17) {
+  //   timeIcon = <WiDaySunny className="icon" />;
+  // } else {
+  //   timeIcon = <WiSunset className="icon" />;
+  // }
 
   return (
     <div className="time-container" style={containerStyle}>
