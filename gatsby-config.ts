@@ -10,7 +10,6 @@ const config: GatsbyConfig = {
   // Learn more at: https://gatsby.dev/graphql-typegen
   graphqlTypegen: true,
   plugins: [
-    "gatsby-plugin-fontawesome-css",
     "gatsby-plugin-image",
     "gatsby-plugin-sitemap",
     {
@@ -49,6 +48,14 @@ const config: GatsbyConfig = {
         custom: {
           families: ["MihiPixelMoji"],
           urls: ["/fonts/fonts.css"],
+        },
+      },
+    },
+    {
+      resolve: "gatsby-plugin-react-svg",
+      options: {
+        rule: {
+          include: /.svg$/, // See below to configure properly
         },
       },
     },
