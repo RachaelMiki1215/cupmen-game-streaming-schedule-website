@@ -38,7 +38,7 @@ const User_Hakka: User = {
     {
       name: "X",
       username: "@hakka_okashi",
-      url: "https://twitter.com/hakka_okashi",
+      url: "https://x.com/hakka_okashi",
     },
   ],
 };

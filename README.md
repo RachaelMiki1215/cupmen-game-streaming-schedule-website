@@ -4,7 +4,7 @@
 
 ### Description
 
-This repository contains code for a very simple [website](https://cupmen-streaming.netlify.app/) I created for the game streamer CupMen ([@TonkotsuCupMen](https://twitter.com/TonkotsuCupMen)).  
+This repository contains code for a very simple [website](https://cupmen-streaming.netlify.app/) I created for the game streamer CupMen ([@TonkotsuCupMen](https://x.com/TonkotsuCupMen)).  
 The website contains the following contents and functions:
 
 - Calendar for showing game streaming schedule.

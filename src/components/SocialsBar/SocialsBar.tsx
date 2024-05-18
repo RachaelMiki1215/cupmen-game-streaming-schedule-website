@@ -32,7 +32,7 @@ const socialsList = [
   },
   {
     name: "X",
-    link: "https://twitter.com/TonkotsuCupMen",
+    link: "https://x.com/TonkotsuCupMen",
     icon: <FontAwesomeIcon icon={faXTwitter} />,
   },
 ];

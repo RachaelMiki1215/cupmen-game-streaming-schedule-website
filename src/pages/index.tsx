@@ -62,7 +62,7 @@ const AboutDiv: React.FC = () => {
         <span>本件についてのご質問・ご要望等は</span>
         <span>
           X{" "}
-          <a href="https://twitter.com/TonkotsuCupMen" target="_blank">
+          <a href="https://x.com/TonkotsuCupMen" target="_blank">
             @TonkotsuCupMen
           </a>{" "}
           にて受け付けております。
