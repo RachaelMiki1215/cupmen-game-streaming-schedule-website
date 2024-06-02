@@ -858,6 +858,168 @@ const StreamingSchedule: StreamingScheduleType[] = [
       MyTwitch,
     ],
   },
+  {
+    datetime: new Date("2024-06-03T22:00:00-05:00"),
+    game: "Terraria",
+    title: "【第20回】カップ麺がTerrariaやるらしい【ゲームプレイ配信】",
+    description: "",
+    platform: [
+      MyYouTubeLive({
+        url: "https://youtube.com/live/iX3sw_1ewA0?feature=share",
+      }),
+      MyKick,
+      MyTwitch,
+    ],
+  },
+  {
+    datetime: new Date("2024-06-04T22:00:00-05:00"),
+    game: "Minecraft (Java)",
+    title: "【第40回】カップ麺がのんびりマイクラするよ【ゲームプレイ配信】",
+    description: "",
+    platform: [
+      MyYouTubeLive({
+        url: "https://youtube.com/live/u3YUKuvlU7g?feature=share",
+      }),
+      MyKick,
+      MyTwitch,
+    ],
+  },
+  {
+    datetime: new Date("2024-06-06T22:00:00-05:00"),
+    game: "Undertale Yellow",
+    title:
+      "【第7回】カップ麺はUndertale Yellowをめのまえにしてケツイがみなぎった【ゲームプレイ配信】",
+    description: "",
+    platform: [
+      MyYouTubeLive({
+        url: "https://youtube.com/live/bZ8FuShkDBw?feature=share",
+      }),
+      MyKick,
+      MyTwitch,
+    ],
+  },
+  {
+    datetime: new Date("2024-06-10T22:00:00-05:00"),
+    game: "Minecraft (統合版)",
+    title:
+      "【英語縛り】カップ麺 is Playing マイクラ with Friends【ゲームプレイ配信】",
+    description: "",
+    platform: [
+      MyYouTubeLive({
+        url: "https://youtube.com/live/s1rYa6dOlMw?feature=share",
+      }),
+      MyKick,
+      MyTwitch,
+    ],
+  },
+  {
+    datetime: new Date("2024-06-11T22:00:00-05:00"),
+    game: "Terraria",
+    title: "【第21回】カップ麺がTerrariaやるらしい【ゲームプレイ配信】",
+    description: "",
+    platform: [
+      MyYouTubeLive({
+        url: "https://youtube.com/live/kAzB6zHWecg?feature=share",
+      }),
+      MyKick,
+      MyTwitch,
+    ],
+  },
+  {
+    datetime: new Date("2024-06-13T22:00:00-05:00"),
+    game: "Undertale Yellow",
+    title:
+      "【第8回】カップ麺はUndertale Yellowをめのまえにしてケツイがみなぎった【ゲームプレイ配信】",
+    description: "",
+    platform: [
+      MyYouTubeLive({
+        url: "https://youtube.com/live/A7Nq1L-rquQ?feature=share",
+      }),
+      MyKick,
+      MyTwitch,
+    ],
+  },
+  {
+    datetime: new Date("2024-06-17T22:00:00-05:00"),
+    game: "Minecraft (Java)",
+    title: "【第41回】カップ麺がのんびりマイクラするよ【ゲームプレイ配信】",
+    description: "",
+    platform: [
+      MyYouTubeLive({
+        url: "https://youtube.com/live/fNO2sfvY_vY?feature=share",
+      }),
+      MyKick,
+      MyTwitch,
+    ],
+  },
+  {
+    datetime: new Date("2024-06-18T22:00:00-05:00"),
+    game: "Terraria",
+    title:
+      "【第22回】カップ麺が🥳みんなで🥳Terrariaやるらしい【ゲームプレイ配信】",
+    description: "",
+    platform: [
+      MyYouTubeLive({
+        url: "https://youtube.com/live/5kHrJ_gBOi8?feature=share",
+      }),
+      MyKick,
+      MyTwitch,
+    ],
+  },
+  {
+    datetime: new Date("2024-06-20T22:00:00-05:00"),
+    game: "Undertale Yellow",
+    title:
+      "【第9回】カップ麺はUndertale Yellowをめのまえにしてケツイがみなぎった【ゲームプレイ配信】",
+    description: "",
+    platform: [
+      MyYouTubeLive({
+        url: "https://youtube.com/live/m0rncaizjz4?feature=share",
+      }),
+      MyKick,
+      MyTwitch,
+    ],
+  },
+  {
+    datetime: new Date("2024-06-24T22:00:00-05:00"),
+    game: "Terraria",
+    title: "【第23回】カップ麺がTerrariaやるらしい【ゲームプレイ配信】",
+    description: "",
+    platform: [
+      MyYouTubeLive({
+        url: "https://youtube.com/live/hHn3oZbEaEw?feature=share",
+      }),
+      MyKick,
+      MyTwitch,
+    ],
+  },
+  {
+    datetime: new Date("2024-06-25T22:00:00-05:00"),
+    game: "Minecraft (Java)",
+    title: "【第42回】カップ麺がのんびりマイクラするよ【ゲームプレイ配信】",
+    description: "",
+    platform: [
+      MyYouTubeLive({
+        url: "https://youtube.com/live/eeF9xAV3e4o?feature=share",
+      }),
+      MyKick,
+      MyTwitch,
+    ],
+  },
+  {
+    datetime: new Date("2024-06-27T22:00:00-05:00"),
+    game: "Undertale Yellow",
+    title:
+      "【第10回】カップ麺はUndertale Yellowをめのまえにしてケツイがみなぎった【ゲームプレイ配信】",
+    description: "",
+    platform: [
+      MyYouTubeLive({
+        url: "https://youtube.com/live/2QVmwhMqrEw?feature=share",
+      }),
+      MyKick,
+      MyTwitch,
+    ],
+  },
 ];
 
 export default StreamingSchedule;
